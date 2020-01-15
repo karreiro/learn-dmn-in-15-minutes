@@ -1,0 +1,54 @@
+
+// Message
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.box
+  font-family: "Roboto", serif
+  font-size: 14px
+  position: absolute
+  right: calc(50% - 400px)
+  top: 100px
+  width: 800px
+  height: 600px
+  box-shadow: 0 8px 10px -6px rgba(0, 0, 0, .4)
+  background: rgba(245, 245, 245, .9)
+  border-radius: 1px
+  padding: 1.25rem 2.5rem
+  // transition: all .75s cubic-bezier(0, 0.85, 0.2, 1)
+  border: 1px solid #CCC
+  opacity: 1
+  overflow: hidden
+  z-index: 99999
+  .title
+    font-family: "Roboto", serif
+    font-size: 2rem
+    border-bottom: 1px solid #CCC
+    padding-bottom: 1.5rem
+    margin: 1.5rem 0
+  img
+    height: 200px
+    display: block
+    margin: 0 auto 2rem
+  p
+    font-size: 1.7rem
+    margin-bottom: 1.5rem
+  button
+    float: right
+  .close
+    top: 0
+    right: 0
+    position: absolute
+    display: inline-block
+    cursor: pointer
+    margin: 10px
+    border-radius: 23px
+    width: 23px
+    height: 23px
+    &::after
+      content: "✕"
+      color: #3A3D40
+      top: 1.5rem
+      right: 1.75rem
+      position: absolute
+      width: 10px
+      font-size: 16px

@@ -1,0 +1,88 @@
+
+// Home
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.home-banner,
+.home-sub-banner
+  max-width: 1200px
+  margin: 0 auto
+
+.home-banner
+  background-image: url('/assets/logo.png')
+  height: 375px
+  margin-top: 50px
+  border-bottom: 3px solid #DDD
+  background-size: 430px
+  background-repeat: no-repeat
+  padding: 0 0 0 475px
+  h1
+    font-size: 10rem
+    padding: 6.5rem 0
+    span
+      display: block
+      line-height: 7.5rem
+      color: #a0a6a9
+      i
+        font-style: normal
+        color: $color-secondary
+
+  @media (max-width: 70.0rem)
+    &
+      margin-top: 30px
+      background-size: 200px
+      padding: 180px 0 0
+      background-position: center top
+      height: 300px
+      h1
+        font-size: 6rem
+        padding: 0
+        text-align: center
+        span
+          display: inline-block
+
+  @media (max-width: 45.0rem)
+    &
+      height: 350px
+    h1
+      span
+        display: block
+
+.home-sub-banner
+  margin-top: 25px
+  text-align: center
+  button
+    background-color: $color-primary
+    border: .1rem solid $color-primary
+    margin: 10px auto 0
+    line-height: 3rem
+    border-bottom: .4rem solid #e09242
+    padding: 0 7rem
+    height: 80px
+    border-radius: 0.4rem 0.4rem 0.6rem 0.6rem
+    font-size: 1.75rem
+    text-shadow: 0 0.2rem 0 #e2882c
+    box-shadow: 0 0 0 5px rgba(49, 49, 49, .1)
+  a,
+  .or
+    font-family: "Roboto", serif
+    font-style: italic
+    color: #4f585f
+  a
+    text-decoration: underline
+    font-size: 1.9rem
+    line-height: 1.75em
+  p
+    margin: 0 12rem 2rem
+    opacity: .95
+    & + p
+      margin: 0 18rem 3rem
+  @media (max-width: 45.0rem)
+    p, p + p
+      margin: 0 2rem 3rem
+  .or
+    margin: 20px 0 5px
+    &:after,
+    &:before
+      padding: 0 15px
+      content: "―"
+      opacity: .5

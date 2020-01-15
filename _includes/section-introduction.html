@@ -1,0 +1,50 @@
+<div id="section-introduction" class="learn-section hidden">
+  <div class="learn-home-content">
+    <div class="page">
+      <h2>Introduction</h2>
+      <p>
+        The primary goal of DMN is to provide a common notation that is readily understandable by all business users, from the business analysts needing to create initial decision requirements and then more detailed decision models, to the technical developers responsible for automating the decisions in processes, and finally, to the business people who will manage and monitor those decisions. DMN creates a standardized bridge for the gap between the business decision design and decision implementation.
+      </p>
+      <button class="button next-section">Next section</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function() {
+
+    // ===== Init =====
+
+    window.LEARN_DMN = window.LEARN_DMN || {};
+    var LEARN_DMN = window.LEARN_DMN;
+    LEARN_DMN.ON_LOAD_SECTION = LEARN_DMN.ON_LOAD_SECTION || {};
+    LEARN_DMN.ON_LOAD_SECTION['section-introduction'] = function() {
+     
+     var title = 'Welcome!';
+     var content = '<p>Welcome to the <b>"Learn DMN in 15 minutes"</b> course!</p>' +
+                   '<img src="/assets/logo.png" />' +
+                   '<p>If you notice any unclear example, or some section that deserves to be improved, please raise and issue here, and we will fix it as soon as possible! Contributions to our source code are welcomed as well.</p>' +
+                   '<p>This whole course is based on the <a href="https://kiegroup.github.io/kogito-online/#/editor/dmn">Kogito Online editor</a>.</p>' +
+                   '<p>We hope you enjoy it! :)</p>';
+
+
+      LEARN_DMN.Lights.turnLightsOff();
+      LEARN_DMN.Message.showMessage({
+        title: title,
+        content: content,
+        width: 600,
+        height: 600,
+        top: 90,
+        actionName: 'Start now!'
+      });
+    }
+
+    // ===== Next section button =====
+
+    var nextSection = document.querySelector('.next-section');
+
+    nextSection.addEventListener('click', function() {
+      LEARN_DMN.markAsCompleted('section-introduction');
+    });
+  }());
+</script>
