@@ -8,16 +8,17 @@
   margin: 0 auto
 
 .home-banner
-  background-image: url('/assets/logo.png')
-  height: 375px
-  margin-top: 50px
+  background-image: url(/assets/logo.png)
+  height: 310px
+  margin-top: 5px
   border-bottom: 3px solid #DDD
-  background-size: 430px
+  background-size: 380px
   background-repeat: no-repeat
   padding: 0 0 0 475px
+  background-position-x: 75px
   h1
     font-size: 10rem
-    padding: 6.5rem 0
+    padding-top: 4.5rem
     span
       display: block
       line-height: 7.5rem
@@ -53,7 +54,7 @@
   button
     background-color: $color-primary
     border: .1rem solid $color-primary
-    margin: 10px auto 0
+    margin: 2.25rem auto 1.5rem
     line-height: 3rem
     border-bottom: .4rem solid #e09242
     padding: 0 7rem
@@ -62,25 +63,34 @@
     font-size: 1.75rem
     text-shadow: 0 0.2rem 0 #e2882c
     box-shadow: 0 0 0 5px rgba(49, 49, 49, .1)
+    transition: all .25s ease-in-out
+    &:hover
+      filter: contrast(1.5)
   a,
   .or
     font-family: "Roboto", serif
     font-style: italic
-    color: #4f585f
+    margin: 0 auto
+    color: #75787b
+    width: 20rem
+    font-size: 1.5rem
+    text-align: center
   a
     text-decoration: underline
-    font-size: 1.9rem
     line-height: 1.75em
+    font-size: 1.75rem
+    margin-bottom: 4rem
+    display: block
   p
     margin: 0 12rem 2rem
     opacity: .95
-    & + p
-      margin: 0 18rem 3rem
+    text-align: left
+    // & + p
+    //   margin: 0 18rem 3rem
   @media (max-width: 45.0rem)
     p, p + p
       margin: 0 2rem 3rem
   .or
-    margin: 20px 0 5px
     &:after,
     &:before
       padding: 0 15px
