@@ -106,7 +106,8 @@
     LEARN_DMN.Navigation.ON_LOAD_SECTION = LEARN_DMN.Navigation.ON_LOAD_SECTION || {};
     
     LEARN_DMN.Navigation.ON_LOAD_SECTION['section-visual-notation'] = function() {
-      LEARN_DMN.Lights.turnLightsOff();
+
+      var numberOfDraggedElements = document.querySelectorAll('.shape-palette .done').length;
 
       function showTryItNowMessage () {
 
@@ -142,7 +143,10 @@
         });
       }
 
-      showTryItNowMessage();
+      if (numberOfDraggedElements === 0) {
+        LEARN_DMN.Lights.turnLightsOff();
+        showTryItNowMessage();
+      }
     }
 
     // ===== Pallete =====
@@ -205,9 +209,9 @@
 
       function nextSection() {
         LEARN_DMN.Message.hideMessage();
-        LEARN_DMN.Navigation.markAsCompleted('section-visual-notation');
+        LEARN_DMN.Navigation.markAsCompletedSection('section-visual-notation');
+        LEARN_DMN.Navigation.nextSection();
       }
-
 
       if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
@@ -215,6 +219,11 @@
         element.style.left = ev.x + 'px';
 
         var nodeSize = dataSVGName === 'svg-decision-service' ? 200 : 100;
+
+        if (isFinished) {
+          LEARN_DMN.Navigation.markAsCompletedSection('section-visual-notation');
+          LEARN_DMN.Navigation.updateSection();
+        }
 
         LEARN_DMN.Message.showMessage({
           title: nodeMessages[dataSVGName].title,

@@ -48,7 +48,8 @@
     var nextSection = document.querySelector('.next-section');
 
     nextSection.addEventListener('click', function() {
-      LEARN_DMN.Navigation.markAsCompleted('section-introduction');
+      LEARN_DMN.Navigation.markAsCompletedSection('section-introduction');
+      LEARN_DMN.Navigation.nextSection();
     });
 
   }());

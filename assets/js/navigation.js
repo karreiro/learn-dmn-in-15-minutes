@@ -204,14 +204,6 @@
     });
   }
 
-  function markAsCompleted(section) {
-      var sectionIndex = getSectionIndex(section);
-      if (LEARN_DMN.Navigation.completedSection < sectionIndex) {
-        LEARN_DMN.Navigation.completedSection = sectionIndex;
-      }
-      nextSection();
-  }
-
   function setupNavigation() {
     getPrevButton().addEventListener('click', prevSection);
     getNextButton().addEventListener('click', nextSection);
@@ -238,9 +230,10 @@
 
   // === Export ===
 
-  LEARN_DMN.Navigation.markAsCompleted = markAsCompleted;
   LEARN_DMN.Navigation.setupNavigation = setupNavigation;
   LEARN_DMN.Navigation.setupSummaryItems = setupSummaryItems;
   LEARN_DMN.Navigation.markAsCompletedSection = markAsCompletedSection;
   LEARN_DMN.Navigation.markAsCurrentSection = markAsCurrentSection;
+  LEARN_DMN.Navigation.updateSection = updateSection;
+  LEARN_DMN.Navigation.nextSection = nextSection;
 }());
