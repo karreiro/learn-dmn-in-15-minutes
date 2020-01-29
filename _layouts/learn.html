@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<script src="/assets/js/page.js"></script>
+<script src="/assets/js/message.js"></script>
+<script src="/assets/js/lights.js"></script>
+<script src="/assets/js/navigation.js"></script>
+
 <div class="learn-home">
   <div class="learn-home-nav">
     <h3>
@@ -9,6 +14,8 @@ layout: default
       <span>in 15 minutes</span>
     </h3>
   </div>
+
+  {{ content }}
 
   {% include section-data-types.html %}
   {% include section-decision-logic.html %}
@@ -21,5 +28,9 @@ layout: default
   {% include summary.html %}
   {% include controls.html %}
 </div>
-<script src="/assets/js/message.js"></script>
-<script src="/assets/js/learn.js"></script>
+
+<script type="text/javascript">
+  LEARN_DMN.Message.setupMessage();
+  LEARN_DMN.Navigation.setupNavigation();
+  LEARN_DMN.Navigation.setupSummaryItems();
+</script>

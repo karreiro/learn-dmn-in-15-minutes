@@ -1,4 +1,4 @@
-<div id="section-visual-notation" class="learn-section hidden">
+<div id="section-visual-notation" class="learn-section {% if page.url != '/learn/visual-notation' %}hidden{% endif %}">
   <div class="learn-home-content editor">
 
     <div class="tabs">
@@ -103,9 +103,9 @@
 
     window.LEARN_DMN = window.LEARN_DMN || {};
     var LEARN_DMN = window.LEARN_DMN;
-    LEARN_DMN.ON_LOAD_SECTION = LEARN_DMN.ON_LOAD_SECTION || {};
+    LEARN_DMN.Navigation.ON_LOAD_SECTION = LEARN_DMN.Navigation.ON_LOAD_SECTION || {};
     
-    LEARN_DMN.ON_LOAD_SECTION['section-visual-notation'] = function() {
+    LEARN_DMN.Navigation.ON_LOAD_SECTION['section-visual-notation'] = function() {
       LEARN_DMN.Lights.turnLightsOff();
 
       function showTryItNowMessage () {
@@ -205,7 +205,7 @@
 
       function nextSection() {
         LEARN_DMN.Message.hideMessage();
-        LEARN_DMN.markAsCompleted('section-visual-notation');
+        LEARN_DMN.Navigation.markAsCompleted('section-visual-notation');
       }
 
 

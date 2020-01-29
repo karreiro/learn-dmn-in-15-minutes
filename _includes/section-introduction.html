@@ -1,4 +1,4 @@
-<div id="section-introduction" class="learn-section hidden">
+<div id="section-introduction" class="learn-section {% if page.url != '/learn/introduction' %}hidden{% endif %}">
   <div class="learn-home-content">
     <div class="page">
       <h2>Introduction</h2>
@@ -14,12 +14,15 @@
 <script type="text/javascript">
   (function() {
 
-    // ===== Init =====
+    // === Init ===
 
     window.LEARN_DMN = window.LEARN_DMN || {};
+    
     var LEARN_DMN = window.LEARN_DMN;
-    LEARN_DMN.ON_LOAD_SECTION = LEARN_DMN.ON_LOAD_SECTION || {};
-    LEARN_DMN.ON_LOAD_SECTION['section-introduction'] = function() {
+    
+    LEARN_DMN.Navigation = LEARN_DMN.Navigation || {};
+    LEARN_DMN.Navigation.ON_LOAD_SECTION = LEARN_DMN.Navigation.ON_LOAD_SECTION || {};
+    LEARN_DMN.Navigation.ON_LOAD_SECTION['section-introduction'] = function() {
      
      var title = 'Welcome!';
      var content = '<p>Welcome to the <b>"Learn DMN in 15 minutes"</b> course!</p>' +
@@ -38,14 +41,15 @@
         top: 90,
         actionName: 'Start now!'
       });
-    }
+    };
 
-    // ===== Next section button =====
+    // === Next section button ===
 
     var nextSection = document.querySelector('.next-section');
 
     nextSection.addEventListener('click', function() {
-      LEARN_DMN.markAsCompleted('section-introduction');
+      LEARN_DMN.Navigation.markAsCompleted('section-introduction');
     });
+
   }());
 </script>

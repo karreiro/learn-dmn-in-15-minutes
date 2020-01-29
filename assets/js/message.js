@@ -3,9 +3,6 @@
   window.LEARN_DMN = window.LEARN_DMN || {};
   var LEARN_DMN = window.LEARN_DMN;
 
-
-  // ======== Message ========
-
   LEARN_DMN.Message = LEARN_DMN.Message || {};
 
   LEARN_DMN.Message.isOpened = false;
@@ -84,25 +81,9 @@
     closeButton.addEventListener('click', hideMessage);
   }
 
+  // === Export ===
+
   LEARN_DMN.Message.showMessage = showMessage;
   LEARN_DMN.Message.hideMessage = hideMessage;
-
-  setupMessage();
-
-  // ======== Lights ========
-
-  LEARN_DMN.Lights = LEARN_DMN.Lights || {};
-
-  var LEARN_DMN = window.LEARN_DMN;
-
-  function turnLightsOn() {
-    document.body.classList.remove('lights-off');
-  }
-
-  function turnLightsOff() {
-    document.body.classList.add('lights-off');
-  }
-
-  LEARN_DMN.Lights.turnLightsOn = turnLightsOn;
-  LEARN_DMN.Lights.turnLightsOff = turnLightsOff;
+  LEARN_DMN.Message.setupMessage = setupMessage;
 }());

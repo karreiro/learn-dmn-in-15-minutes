@@ -27,7 +27,6 @@ layout: default
 
 {% include footer.html %}
 
-<script src="/assets/js/message.js"></script>
 <script type="text/javascript">
 (function(){
 
@@ -41,7 +40,7 @@ layout: default
     startNowButton.addEventListener('click', function() {
         if (!isMobile()) {
             // TODO: animation logic
-            window.location.href = "/learn";
+            window.location.href = "/learn/introduction";
         } else {
             alert('Oops! Your screen is too small for this course. Try to access from a desktop :-)')
         }
