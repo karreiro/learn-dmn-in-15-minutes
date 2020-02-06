@@ -281,9 +281,23 @@
         .name,
         .type
           display: inline-block
-          padding: 23px 1px 0
+          margin: 23px 1px 0
+          position: relative
         .type
           font-weight: bold
+        &.structure
+          .name
+            padding-left: 15px
+          .name::before
+            content: '▶'
+            font-size: 8px
+            padding-right: 10px
+            left: 0
+            top: 4px
+            position: absolute
+        &.nested
+          .name
+            padding-left: 50px
       .data-types-row
         background-color: rgb(229, 238, 245)
         border-left: 5px solid rgb(2, 112, 177)

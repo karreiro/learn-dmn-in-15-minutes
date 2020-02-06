@@ -10,7 +10,7 @@
       </ul>
     </div>
 
-    <div id="data-types-placeholder-screen" class="data-types-editor-content hidden">
+    <div class="data-types-placeholder-screen data-types-editor-content hidden">
       <h3>Custom Data Types</h3>
       <div class="placeholder">
         <div>
@@ -33,11 +33,11 @@
       </div>
     </div>
 
-    <div id="data-types-list-screen" class="data-types-editor-content hidden">
+    <div class="data-types-list-screen data-types-editor-content hidden">
       <h3>Custom Data Types</h3>
       <div class="data-types-list">
 
-        <div id="edit-mode-row" class="data-types-row">
+        <div class="edit-mode-row data-types-row">
           
           <div class="data-type-field">
             <label>Name</label>
@@ -85,7 +85,7 @@
           <i class="fa fa-times"></i>
         </div>
 
-        <div id="closed-mode-row" class="data-types-closed-row hidden">
+        <div class="closed-mode-row data-types-closed-row hidden">
           <div class="name"></div>
           <div class="type"></div>
           <i class="fa fa-pencil"></i>
@@ -187,19 +187,19 @@
     // -- Data Types list screen
 
     function showDataTypesListScreen() {
-      var screen = getPage().querySelector('#data-types-list-screen');
+      var screen = getPage().querySelector('.data-types-list-screen');
       screen.classList.remove('hidden');
     }
 
     function hideDataTypesListScreen() {
-      var screen = getPage().querySelector('#data-types-list-screen');
+      var screen = getPage().querySelector('.data-types-list-screen');
       screen.classList.add('hidden');
     }
 
     // -- Data Types placeholder screen
 
     function showDataTypesPlaceholderScreen() {
-      var screen = getPage().querySelector('#data-types-placeholder-screen');
+      var screen = getPage().querySelector('.data-types-placeholder-screen');
       var addCustomDataType = getPage().querySelector('.add-custom-data-type');
 
       screen.classList.remove('hidden');
@@ -216,7 +216,7 @@
     }
 
     function hideDataTypesPlaceholderScreen() {
-      var screen = getPage().querySelector('#data-types-placeholder-screen');
+      var screen = getPage().querySelector('.data-types-placeholder-screen');
       screen.classList.add('hidden');
     }
 
@@ -263,7 +263,7 @@
 
     function setupAddCustomDataType() {
       var addCustomDataType = getPage().querySelector('.add-custom-data-type');
-      var nameInput = getPage().querySelector('#edit-mode-row [type="text"]');
+      var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
       addCustomDataType.addEventListener('click', function() {
         showDataTypesListScreen();
         hideDataTypesPlaceholderScreen();
@@ -296,15 +296,30 @@
 
       dropdownItems.forEach(function(item) {
         item.addEventListener('click', function() {
+
+          var editModeRow = getPage().querySelector('.edit-mode-row');
+          var clientRect = editModeRow.getBoundingClientRect();
+          
           dropdownButton.querySelector('span').textContent = item.textContent;
+          
           getDropDownList().classList.add('hidden');
+
+          LEARN_DMN.Message.showMessage({
+            title: '↑ Look!',
+            content: '<p>Seve your new data type!</p>',
+            width: 400,
+            height: 140,
+            top: 240,
+            left: clientRect.x + clientRect.width - 400,
+            effect: 'vertical-float'
+          });
         });
       });
     }
 
     function setupSaveButton() {
-      var saveButton = getPage().querySelector('#edit-mode-row .fa-check');
-      var nameInput = getPage().querySelector('#edit-mode-row [type="text"]');
+      var saveButton = getPage().querySelector('.edit-mode-row .fa-check');
+      var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
 
       saveButton.addEventListener('click', function() {
         var name = nameInput.value;
@@ -312,8 +327,8 @@
 
         if (name.length > 0 && type !== '- Select a data type -') {
 
-          var editModeRow = getPage().querySelector('#edit-mode-row')
-          var closedModeRow = getPage().querySelector('#closed-mode-row');
+          var editModeRow = getPage().querySelector('.edit-mode-row')
+          var closedModeRow = getPage().querySelector('.closed-mode-row');
 
           editModeRow.classList.add('hidden');
           closedModeRow.classList.remove('hidden');
@@ -322,13 +337,11 @@
           closedModeRow.querySelector('.type').textContent = '(' + type + ')';
 
           LEARN_DMN.Message.showMessage({
-            title: '↑ Congratulations!',
+            title: 'Congratulations!',
             content: '<p>You successfuly created your first data type!</p>',
             width: 400,
             height: 200,
             top: 240,
-            left: 20,
-            effect: 'vertical-float',
             actionName: 'Next section →',
             action: function() {
               LEARN_DMN.Navigation.markAsCompletedSection('section-simple-data-types');
@@ -352,7 +365,7 @@
     }
 
     function setupNameInput() {
-      var nameInput = getPage().querySelector('#edit-mode-row [type="text"]');
+      var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
       nameInput.addEventListener('keydown', LEARN_DMN.Message.hideMessage);
     }
 
