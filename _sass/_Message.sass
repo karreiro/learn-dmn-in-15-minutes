@@ -52,3 +52,25 @@
       position: absolute
       width: 10px
       font-size: 16px
+
+.box.vertical-float
+  animation: vertical-float 1.5s ease-in-out infinite
+
+.box.horizontal-float
+  animation: horizontal-float 1.5s ease-in-out infinite
+
+@keyframes vertical-float
+  0%
+    transform: translatey(0px)
+  50%
+    transform: translatey(15px)
+  100%
+    transform: translatey(0px)
+
+@keyframes horizontal-float
+  0%
+    transform: translatex(0px)
+  50%
+    transform: translatex(15px)
+  100%
+    transform: translatex(0px)

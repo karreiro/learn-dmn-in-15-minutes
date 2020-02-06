@@ -107,7 +107,7 @@
     
     LEARN_DMN.Navigation.ON_LOAD_SECTION['section-visual-notation'] = function() {
 
-      var numberOfDraggedElements = document.querySelectorAll('.shape-palette .done').length;
+      var numberOfDraggedElements = document.querySelectorAll('#section-visual-notation .shape-palette .done').length;
 
       function showTryItNowMessage () {
 
@@ -139,6 +139,7 @@
           width: 400,
           height: 160,
           top: 120,
+          effect: 'horizontal-float',
           left: 60
         });
       }
@@ -178,8 +179,8 @@
       }
     };
 
-    var palleteItems = document.querySelectorAll('.shape-palette li img');
-    var editorCanvas = document.querySelector('.editor');
+    var palleteItems = document.querySelectorAll('#section-visual-notation .shape-palette li img');
+    var editorCanvas = document.querySelector('#section-visual-notation .editor');
 
     function allowDrop(ev) {
       ev.preventDefault();
@@ -193,10 +194,10 @@
       ev.preventDefault();
 
       var dataSVGName = ev.dataTransfer.getData('text');
-      var element = document.querySelector('#' + dataSVGName);
-      var button = document.querySelector('[data-svg-name="' + dataSVGName + '"]');
+      var element = document.querySelector('#section-visual-notation #' + dataSVGName);
+      var button = document.querySelector('#section-visual-notation [data-svg-name="' + dataSVGName + '"]');
       var numberOfPalleteItems = 6;
-      var numberOfDraggedElements = document.querySelectorAll('.shape-palette .done').length + 1;
+      var numberOfDraggedElements = document.querySelectorAll('#section-visual-notation .shape-palette .done').length + 1;
       var isFinished = numberOfPalleteItems === numberOfDraggedElements;
 
       function getSuffix() {

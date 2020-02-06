@@ -19,7 +19,22 @@
           The DMN spececification often refeers to data types as Item Definitions, both names means strictly the same thing.
         </p>
       </blockquote>
-      <button class="button next-section">Next section</button>
+      <button class="button try-data-types">Try Data Types now →</button>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  (function() {
+
+    // === Try Data Types button ===
+
+    var nextSection = document.querySelector('#section-data-types .try-data-types');
+
+    nextSection.addEventListener('click', function() {
+      LEARN_DMN.Navigation.markAsCompletedSection('section-data-types');
+      LEARN_DMN.Navigation.nextSection();
+    });
+
+  }());
+</script>

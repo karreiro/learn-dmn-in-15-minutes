@@ -1,7 +1,9 @@
 (function () {
 
   window.LEARN_DMN = window.LEARN_DMN || {};
+  
   var LEARN_DMN = window.LEARN_DMN;
+  var ALLOWED_EFFECTS = ['vertical-float', 'horizontal-float'];
 
   LEARN_DMN.Message = LEARN_DMN.Message || {};
 
@@ -42,6 +44,19 @@
     button.addEventListener('click', onClick);
   }
 
+  function enableEffect(effect) {
+    disableEffects();
+    if (ALLOWED_EFFECTS.indexOf(effect) !== -1) {
+      getMessage().classList.add(effect);
+    }
+  }
+
+  function disableEffects() {
+    ALLOWED_EFFECTS.forEach(function(effect) {
+      getMessage().classList.remove(effect);
+    });
+  }
+
   function showMessage(options) {
 
     var opts = options || {};
@@ -60,6 +75,7 @@
     setContent(options.content);
     setActionName(options.actionName);
     enableAction(options.action);
+    enableEffect(options.effect);
 
     message.classList.remove('hidden');
 
@@ -70,7 +86,7 @@
 
     var message = getMessage();
 
-    message.classList.add('hidden')
+    message.classList.add('hidden');
 
     LEARN_DMN.Lights.turnLightsOn();
     LEARN_DMN.Message.isOpened = false;

@@ -6,7 +6,7 @@
         The primary goal of DMN is to provide a common notation that is readily understandable by all business users, from the business analysts needing to create initial decision requirements and then more detailed decision models, to the technical developers responsible for automating the decisions in processes, and finally, to the business people who will manage and monitor those decisions. DMN creates a standardized bridge for the gap between the business decision design and decision implementation.
       </p>
       <img src="/assets/diagram-dmn.png" />
-      <button class="button next-section">Next section</button>
+      <button class="button next-section">Next section →</button>
     </div>
   </div>
 </div>
@@ -39,13 +39,13 @@
         width: 600,
         height: 600,
         top: 90,
-        actionName: 'Start now!'
+        actionName: 'Start now →'
       });
     };
 
     // === Next section button ===
 
-    var nextSection = document.querySelector('.next-section');
+    var nextSection = document.querySelector('#section-introduction .next-section');
 
     nextSection.addEventListener('click', function() {
       LEARN_DMN.Navigation.markAsCompletedSection('section-introduction');

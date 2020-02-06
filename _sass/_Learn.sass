@@ -71,7 +71,8 @@
           font-size: 10px
           top: 1px
           left: -21px
-        
+      li.sub-section
+        padding-left: 25px
       li.work-in-progress
         opacity: .8
         font-weight: bold
@@ -171,6 +172,8 @@
       background-color: #FFF
       width: calc(100% - 35px)
       user-select: none
+      border-bottom: 1px solid #DDD
+      height: 38px
       .fa
         float: right
       ul
@@ -194,4 +197,193 @@
       width: 35px
       border-left: 1px solid #DDD
       opacity: .75
+  .editor.data-types-editor
+    background: #FFF
+    p,
+    h3,
+    h4,
+    button
+      font-family: "Open Sans", "Helvetica", "Arial", "sans-serif"
+      display: block
+    h3
+      font-size: 16px
+      font-weight: bold
+      margin: 30px 0 0 20px
+      letter-spacing: .1px
+    p
+      font-size: 13px
+    button
+      background-color: rgb(0, 136, 206)
+      background-image: linear-gradient(rgb(57, 165, 220) 0px, rgb(0, 136, 206) 100%)
+      border: 1px solid rgb(0, 101, 156)
+      border-radius: 2px
+      text-transform: unset
+      font-weight: bold
+      font-size: 13px
+      margin: 0 auto
+      padding: 0 20px 0 15px
+      height: 40px
+      i
+        color: #FFF
+    .placeholder
+      background-color: #f5f5f5
+      position: fixed
+      top: 150px
+      left: 20px
+      width: calc(100% - 375px)
+      height: calc(100% - 190px)
+      margin-top: 20px
+      align-items: center
+      justify-content: center
+      display: flex
+      .fa-object-group
+        color: #9c9c9c
+        font-size: 4.25em
+        margin-bottom: 10px
+      & > div
+        width: 500px
+        padding-bottom: 50px
+        text-align: center
+    .data-types-list
+      width: calc(100% - 35px)
+      padding: 10px 20px
+      .data-types-closed-row,
+      .data-types-row
+        height: 70px
+        width: 100%
+        border: 1px solid #DDDDDD
+        padding-left: 25px
+        padding-right: 15px
+        position: relative
+        margin-top: -1px
+        font-size: 14px
+        font-weight: normal
+        font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif'
+        & > .fa
+          font-size: 18px
+          padding: 25px 10px
+          position: absolute
+          top: 0
+          right: 60px
+        & > .fa-times,
+        & > .fa-pencil,
+        & > .fa-plus-circle,
+        & > .fa-trash
+          color: rgb(54, 54, 54)
+        & > .fa-times,
+        & > .fa-trash
+          right: 20px
+        & > .fa-pencil
+          right: 100px
+        & > .fa-plus-circle
+          right: 60px
+      .data-types-closed-row
+        .name,
+        .type
+          display: inline-block
+          padding: 23px 1px 0
+        .type
+          font-weight: bold
+      .data-types-row
+        background-color: rgb(229, 238, 245)
+        border-left: 5px solid rgb(2, 112, 177)
+        .data-type-field
+          width: 230px
+          margin: 9px 10px 0 0
+          display: inline-block
+          vertical-align: top
+          ul
+            background: #FFF
+            border: 1px solid #bbb
+            border-radius: 1px
+            box-shadow: 0 6px 12px rgba(0,0,0,.175)
+            li
+              margin: 0
+              padding: 3px 10px
+              border-top: 1px solid transparent
+              border-bottom: 1px solid transparent
+              &:hover
+                border-color: #bee1f4
+                background-color: #def3ff
+            li.dropdown-header
+              text-transform: uppercase
+              color: #AAA
+            li.structure
+              border-top: 1px solid #DFDFDF
+              color: #0088ce
+              position: relative
+          label,
+          input,
+          ul li
+            font-size: 12px
+            font-weight: normal
+          label,
+          input,
+            position: relative
+          label
+            padding-left: 9px
+          label::before
+            content: '*'
+            position: absolute
+            color: #990000
+            left: 0
+            font-size: 12px
+          input
+            background: #FFF
+            border-radius: 0
+            padding: 0 5px
+            margin: 0
+            height: 26px
+            width: 90%
+          input:focus
+            border-color: #0088ce
+        .dropdown-component
+          cursor: pointer
+          position: relative
+          .dropdown-button
+            align-items: flex-start
+            background-color: #f1f1f1
+            background-image: linear-gradient(#fafafa 0px, #ededed 100%)
+            box-shadow: rgba(3, 3, 3, 0.1) 0px 2px 3px 0px
+            border: 1px solid #bbbbbb
+            padding: 2px 10px 0
+            font-size: 13px
+            height: 26px
+            font-weight: 500
+            .fa-angle-down
+              position: absolute
+              color: rgb(81, 81, 79)
+              padding: 5px 10px
+              top: 0
+              right: 0
+        .constraints,
+        .list-data-type,
+          margin: 20px 50px 0
+          font-size: 12px
+          a
+            color: #0088ce
+            text-decoration: none
+        .list-data-type
+          .fa
+            color: #555
+          .slider
+            background-color: #ccc
+            border-radius: 14px
+            width: 30px
+            height: 14px
+            display: inline-block
+            margin: -3px 15px
+            position: relative
+            &::before
+              position: absolute
+              content: ' '
+              height: 10px
+              width: 10px
+              left: 2px
+              bottom: 2px
+              background-color: white
+              -webkit-transition: .4s
+              transition: .4s
+              border-radius: 50%
+
   // ––––––––––––––––––––––––––––––––––––––––––––––––––

@@ -11,6 +11,8 @@
                                    'section-decision-logic',
                                    'section-the-feel-language',
                                    'section-data-types',
+                                   'section-simple-data-types',
+                                   'section-structure-data-types',
                                    'section-reusability',
                                    'section-integrate'];
 
