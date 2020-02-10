@@ -52,12 +52,29 @@
       position: absolute
       width: 10px
       font-size: 16px
+  .close.disabled
+    display: none
+
+.shake-box
+  animation: shake-box .2s ease-in-out infinite
 
 .box.vertical-float
   animation: vertical-float 1.5s ease-in-out infinite
 
 .box.horizontal-float
   animation: horizontal-float 1.5s ease-in-out infinite
+
+@keyframes shake-box
+  0%
+    transform: translatey(0px) translatex(0px)
+  25%
+    transform: translatey(2px) translatex(2px)
+  50%
+    transform: translatey(-2px) translatex(2px)
+  75%
+    transform: translatey(2px) translatex(-2px)
+  100%
+    transform: translatey(0px) translatex(0px)
 
 @keyframes vertical-float
   0%

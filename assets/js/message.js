@@ -51,6 +51,15 @@
     }
   }
 
+  function enableCloseButton(isCloseButtonEnabled) {
+    var closeButton = getMessage().querySelector('.close');
+    if (isCloseButtonEnabled) {
+      closeButton.classList.remove('disabled')
+    } else {
+      closeButton.classList.add('disabled')
+    }
+  }
+
   function disableEffects() {
     ALLOWED_EFFECTS.forEach(function(effect) {
       getMessage().classList.remove(effect);
@@ -76,6 +85,7 @@
     setActionName(options.actionName);
     enableAction(options.action);
     enableEffect(options.effect);
+    enableCloseButton(options.isCloseButtonEnabled);
 
     message.classList.remove('hidden');
 
@@ -93,8 +103,33 @@
   }
 
   function setupMessage() {
-    var closeButton = getMessage().querySelector('.close');
-    closeButton.addEventListener('click', hideMessage);
+    function setupCloseButton() {
+      var closeButton = getMessage().querySelector('.close');
+      closeButton.addEventListener('click', hideMessage);
+    }
+
+    function setupEscKeyButton() {
+      window.onkeydown = function(event) {
+        if (event.keyCode === 27) {
+          shakeMessageBox();
+        }
+      };
+    }
+
+    setupCloseButton();
+    setupEscKeyButton();
+  }
+
+  function shakeMessageBox() {
+    
+    var shakeClass = 'box shake-box';
+    var cssClass = getMessage().getAttribute('class');
+
+    getMessage().setAttribute('class', shakeClass);
+    
+    setTimeout(function() {
+      getMessage().setAttribute('class', cssClass);
+    }, 500);
   }
 
   // === Export ===
@@ -102,4 +137,5 @@
   LEARN_DMN.Message.showMessage = showMessage;
   LEARN_DMN.Message.hideMessage = hideMessage;
   LEARN_DMN.Message.setupMessage = setupMessage;
+  LEARN_DMN.Message.shakeMessageBox = shakeMessageBox;
 }());
