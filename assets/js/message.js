@@ -60,6 +60,16 @@
     }
   }
 
+  function setAllowedElementSelector(selector) {
+    if (selector) {
+      getMessage().setAttribute('data-allowed-element-selector', selector);
+    }
+  }
+
+  function getAllowedElementSelector() {
+    return getMessage().getAttribute('data-allowed-element-selector') || '';
+  }
+
   function disableEffects() {
     ALLOWED_EFFECTS.forEach(function(effect) {
       getMessage().classList.remove(effect);
@@ -86,6 +96,8 @@
     enableAction(options.action);
     enableEffect(options.effect);
     enableCloseButton(options.isCloseButtonEnabled);
+    setAllowedElementSelector(options.allowedElementSelector);
+    // SHAKE WHEN OPENED BUT BNUTTON
 
     message.classList.remove('hidden');
 
@@ -97,6 +109,7 @@
     var message = getMessage();
 
     message.classList.add('hidden');
+    setAllowedElementSelector('');
 
     LEARN_DMN.Lights.turnLightsOn();
     LEARN_DMN.Message.isOpened = false;
@@ -116,14 +129,31 @@
       };
     }
 
+    function setupFocusHandler() {
+      document.addEventListener('click', function (event) {
+        var allowedElement = getAllowedElementSelector();
+        if (allowedElement.length > 0 && !event.target.matches(allowedElement)) {
+          shakeMessageBox();
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+      }, false);
+    }
+
     setupCloseButton();
     setupEscKeyButton();
+    setupFocusHandler();
   }
 
   function shakeMessageBox() {
     
     var shakeClass = 'box shake-box';
     var cssClass = getMessage().getAttribute('class');
+
+    if (getMessage().classList.contains('shake-box')) {
+      return;
+    }
 
     getMessage().setAttribute('class', shakeClass);
     
