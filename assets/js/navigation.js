@@ -9,19 +9,19 @@
   LEARN_DMN.Navigation.SECTIONS = ['section-introduction',
                                    'section-visual-notation',
                                    'section-decision-logic',
-                                   'section-the-feel-language',
                                    'section-data-types',
                                    'section-simple-data-types',
                                    'section-structure-data-types',
-                                   'section-reusability',
+                                   'section-the-feel-language',
                                    'section-integrate'];
 
   LEARN_DMN.Navigation.SECTIONS_TITLES = ['Learn DMN in 15 minutes - Introduction',
                                           'Learn DMN in 15 minutes - Visual Notation',
                                           'Learn DMN in 15 minutes - Decision Logic',
-                                          'Learn DMN in 15 minutes - The FEEL language',
                                           'Learn DMN in 15 minutes - Data Types',
-                                          'Learn DMN in 15 minutes - Reusability',
+                                          'Learn DMN in 15 minutes - Simple Data Types',
+                                          'Learn DMN in 15 minutes - Structure Data Types',
+                                          'Learn DMN in 15 minutes - The FEEL language',
                                           'Learn DMN in 15 minutes - Integrate'];
 
   LEARN_DMN.Navigation.ON_LOAD_SECTION = LEARN_DMN.Navigation.ON_LOAD_SECTION || {};
