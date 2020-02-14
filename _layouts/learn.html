@@ -2,10 +2,8 @@
 layout: default
 ---
 
-<script src="/assets/js/page.js"></script>
 <script src="/assets/js/message.js"></script>
 <script src="/assets/js/lights.js"></script>
-<script src="/assets/js/navigation.js"></script>
 
 <div class="learn-home">
   <div class="learn-home-nav">
@@ -17,21 +15,10 @@ layout: default
 
   {{ content }}
 
-  {% include section-introduction.html %}
-  {% include section-visual-notation.html %}
-  {% include section-decision-logic.html %}
-  {% include section-data-types.html %}
-  {% include section-simple-data-types.html %}
-  {% include section-structure-data-types.html %}
-  {% include section-the-feel-language.html %}
-  {% include section-integrate.html %}
-
   {% include summary.html %}
   {% include controls.html %}
 </div>
 
 <script type="text/javascript">
   LEARN_DMN.Message.setupMessage();
-  LEARN_DMN.Navigation.setupNavigation();
-  LEARN_DMN.Navigation.setupSummaryItems();
 </script>
