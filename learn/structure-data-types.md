@@ -41,7 +41,7 @@ layout: learn
       <h3>Custom Data Types</h3>
       <div class="data-types-list">
 
-        <div class="first-data-type data-types-closed-row structure hidden">
+        <div class="data-type-1 data-types-closed-row structure hidden">
           <div class="name"></div>
           <div class="type"></div>
           <i class="fa fa-pencil"></i>
@@ -49,7 +49,7 @@ layout: learn
           <i class="fa fa-trash"></i>
         </div>
 
-        <div class="second-data-type data-types-closed-row nested hidden">
+        <div class="data-type-2 data-types-closed-row nested hidden">
           <div class="name"></div>
           <div class="type"></div>
           <i class="fa fa-pencil"></i>
@@ -57,7 +57,7 @@ layout: learn
           <i class="fa fa-trash"></i>
         </div>
 
-        <div class="third-data-type data-types-closed-row nested hidden">
+        <div class="data-type-3 data-types-closed-row nested hidden">
           <div class="name"></div>
           <div class="type"></div>
           <i class="fa fa-pencil"></i>
