@@ -1,9 +1,9 @@
 (function () {
 
   window.LEARN_DMN = window.LEARN_DMN || {};
-  
+
   var LEARN_DMN = window.LEARN_DMN;
-  var ALLOWED_EFFECTS = ['vertical-float', 'horizontal-float'];
+  var ALLOWED_EFFECTS = [ 'vertical-float', 'horizontal-float' ];
 
   LEARN_DMN.Message = LEARN_DMN.Message || {};
 
@@ -71,7 +71,7 @@
   }
 
   function disableEffects() {
-    ALLOWED_EFFECTS.forEach(function(effect) {
+    ALLOWED_EFFECTS.forEach(function (effect) {
       getMessage().classList.remove(effect);
     });
   }
@@ -81,8 +81,8 @@
     var opts = options || {};
     var width = parseInt(options.width || 550);
     var height = parseInt(options.height || 400);
-    var top = options.top ? options.top + 'px' : 'calc(50% - ' + (height/2) + 'px)';
-    var left = options.left ? options.left+ 'px' : 'calc(50% - ' + ((width/2) + 150) + 'px)';
+    var top = options.top ? options.top + 'px' : 'calc(50% - ' + (height / 2) + 'px)';
+    var left = options.left ? options.left + 'px' : 'calc(50% - ' + ((width / 2) + 150) + 'px)';
     var message = getMessage();
 
     message.style.width = !width ? opts.width : width + 'px';
@@ -122,7 +122,7 @@
     }
 
     function setupEscKeyButton() {
-      window.onkeydown = function(event) {
+      window.onkeydown = function (event) {
         if (event.keyCode === 27) {
           shakeMessageBox();
         }
@@ -147,7 +147,7 @@
   }
 
   function shakeMessageBox() {
-    
+
     var shakeClass = 'box shake-box';
     var cssClass = getMessage().getAttribute('class');
 
@@ -156,8 +156,8 @@
     }
 
     getMessage().setAttribute('class', shakeClass);
-    
-    setTimeout(function() {
+
+    setTimeout(function () {
       getMessage().setAttribute('class', cssClass);
     }, 500);
   }

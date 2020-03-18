@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   // Structure data types
   // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -58,7 +58,7 @@
       width: 400,
       height: 180,
       isCloseButtonEnabled: true,
-      action: function() {
+      action: function () {
         LEARN_DMN.Lights.turnLightsOn();
       }
     });
@@ -90,7 +90,7 @@
   }
 
   function setupDropdown() {
-    
+
     var dropdownButton = getPage().querySelector('.dropdown-button');
     var dropdownItems = getPage().querySelectorAll('ul.dropdown-list li');
 
@@ -98,15 +98,15 @@
       return getPage().querySelector('.dropdown-list');
     }
 
-    dropdownButton.addEventListener('click', function() {
+    dropdownButton.addEventListener('click', function () {
       LEARN_DMN.Message.hideMessage();
       getDropDownList().classList.toggle('hidden');
     });
 
-    dropdownItems.forEach(function(item) {
-      item.addEventListener('click', function() {
+    dropdownItems.forEach(function (item) {
+      item.addEventListener('click', function () {
         var editModeRow = getPage().querySelector('.data-types-row');
-        
+
         dropdownButton.querySelector('span').textContent = item.textContent;
         getDropDownList().classList.add('hidden');
       });
@@ -116,16 +116,16 @@
   function setupSaveButton() {
     var saveButton = getPage().querySelector('.data-types-row .fa-check');
 
-    saveButton.addEventListener('click', function() {
+    saveButton.addEventListener('click', function () {
 
       var name = getCurrentName();
       var type = getPage().querySelector('.dropdown-button').textContent.trim();
 
-      saveButtonHandlers[saveButtonStep]();
+      saveButtonHandlers[ saveButtonStep ]();
     });
   }
 
-  saveButtonHandlers[0] = function () {
+  saveButtonHandlers[ 0 ] = function () {
 
     var isNameNotBlank = getCurrentName().length > 0;
     var isTypeStructure = getCurrentType() === 'Structure';
@@ -149,7 +149,7 @@
     showErrorMessage('Try to <b>insert a name</b> and set the type of your data type as <b>strucutre</b>.');
   }
 
-  saveButtonHandlers[1] = function () {
+  saveButtonHandlers[ 1 ] = function () {
 
     var isNameNotBlank = getCurrentName().length > 0;
     var isTypeNotBlank = getCurrentType() !== '- Select a data type -';
@@ -167,7 +167,7 @@
     showErrorMessage('Try to <b>insert a name</b> and <b>set a type</b> for your data type.');
   }
 
-  saveButtonHandlers[2] = function () {
+  saveButtonHandlers[ 2 ] = function () {
 
     var isNameNotBlank = getCurrentName().length > 0;
     var isTypeNotBlank = getCurrentType() !== '- Select a data type -';
@@ -187,7 +187,7 @@
         height: 225,
         top: 240,
         actionName: 'Next section →',
-        action: function() {
+        action: function () {
           window.location.href = '/learn/the-feel-language';
         }
       });
@@ -214,7 +214,7 @@
     width: 400,
     height: 200,
     actionName: 'Start now',
-    action: function() {
+    action: function () {
       LEARN_DMN.Lights.turnLightsOn();
       LEARN_DMN.Message.showMessage({
         title: '↑ Look!',

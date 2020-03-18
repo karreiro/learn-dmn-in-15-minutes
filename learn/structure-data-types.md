@@ -6,7 +6,7 @@ layout: learn
   <div class="learn-home-content editor data-types-editor">
 
     <div class="tabs">
-      <i class="fa fa-search"></i> 
+      <i class="fa fa-search"></i>
       <ul>
         <li>Editor</li>
         <li>Documentation</li>
@@ -66,12 +66,12 @@ layout: learn
         </div>
 
         <div class="data-types-row">
-          
+
           <div class="data-type-field">
             <label>Name</label>
             <input type="text">
           </div>
-          
+
           <div class="data-type-field">
             <label>Type</label>
             <div class="dropdown-component">

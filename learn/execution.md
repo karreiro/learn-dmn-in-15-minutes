@@ -117,6 +117,6 @@ mvn clean compile <b>quarkus:dev</b> -DskipTests=true</code></pre>
 
       <p>Now, try to execute the script above and understand why the decision node
         <code><b>Should the driver be suspended?</b></code> returns <code>"Yes"</code>.</p>
-      </div>
     </div>
   </div>
+</div>

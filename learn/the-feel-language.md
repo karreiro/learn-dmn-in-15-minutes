@@ -8,7 +8,9 @@ layout: learn
       <hr />
 
       <p>
-        Literal expressions, decision tables, and many other DMN elements depend on textual expressions to work. The <b>FEEL</b> (Friendly Enough Expression Language) shines as a readable language for programmers and business analysts. Its design follows these principles:
+        Literal expressions, decision tables, and many other DMN elements depend on textual expressions to work. The
+        <b>FEEL</b> (Friendly Enough Expression Language) shines as a readable language for programmers and business
+        analysts. Its design follows these principles:
       </p>
       <ul>
         <li>Side-effect free</li>
@@ -22,7 +24,8 @@ layout: learn
 
       <h4>Conditional statements</h4>
       <p>
-        Here you can see an example of a decision node with a literal expression as the decision logic. Notice how the FEEL expression defines the logic of the node:
+        Here you can see an example of a decision node with a literal expression as the decision logic. Notice how the
+        FEEL expression defines the logic of the node:
       </p>
       <img src="/assets/the-feel-language.png" width="80%" />
       <p>
@@ -82,12 +85,14 @@ layout: learn
         </tbody>
       </table>
       <p>
-        If you're curious about this kind of statement, you may try to discover more about this one: <code><b>every</b> i <b>in</b> [list] <b>satisfies</b> [condition]</code> ;-)
+        If you're curious about this kind of statement, you may try to discover more about this one:
+        <code><b>every</b> i <b>in</b> [list] <b>satisfies</b> [condition]</code> ;-)
       </p>
 
       <h4>Range statements</h4>
       <p>
-        Ranges have a tricky syntax to determine included and excluded elements in a given interval. The following examples clarify that by checking if some number is included in each range:
+        Ranges have a tricky syntax to determine included and excluded elements in a given interval. The following
+        examples clarify that by checking if some number is included in each range:
       </p>
       <table class="code-table">
         <thead>
@@ -324,7 +329,9 @@ layout: learn
         </tbody>
       </table>
       <p>
-        Here you've learned the most frequently used FEEL structures. There are other powerful features you may learn on the <a href="https://www.omg.org/spec/DMN/1.2/PDF">DMN spec</a>. If you're feeling inspired, take a look there :-)
+        Here you've learned the most frequently used FEEL structures. There are other powerful features you may learn on
+        the <a href="https://www.omg.org/spec/DMN/1.2/PDF">DMN spec</a>. If you're feeling inspired, take a look there
+        :-)
       </p>
       <a class="button next-section" href="/learn/visual-notation">Next section →</a>
     </div>

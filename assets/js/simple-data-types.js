@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   // Simple data types
   // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -67,7 +67,7 @@
     function activateDataTypesTab() {
       var tabItems = getPage().querySelectorAll('.tabs ul li');
 
-      tabItems.forEach(function(item) {
+      tabItems.forEach(function (item) {
         if (item.textContent === 'Data Types') {
           item.classList.add('active');
         } else {
@@ -94,7 +94,7 @@
   function setupAddCustomDataType() {
     var addCustomDataType = getPage().querySelector('.add-custom-data-type');
     var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
-    addCustomDataType.addEventListener('click', function() {
+    addCustomDataType.addEventListener('click', function () {
       showDataTypesListScreen();
       hideDataTypesPlaceholderScreen();
       nameInput.focus();
@@ -112,7 +112,7 @@
   }
 
   function setupDropdown() {
-    
+
     var dropdownButton = getPage().querySelector('.dropdown-button');
     var dropdownItems = getPage().querySelectorAll('ul.dropdown-list li');
 
@@ -120,18 +120,18 @@
       return getPage().querySelector('.dropdown-list');
     }
 
-    dropdownButton.addEventListener('click', function() {
+    dropdownButton.addEventListener('click', function () {
       getDropDownList().classList.toggle('hidden');
     });
 
-    dropdownItems.forEach(function(item) {
-      item.addEventListener('click', function() {
+    dropdownItems.forEach(function (item) {
+      item.addEventListener('click', function () {
 
         var editModeRow = getPage().querySelector('.edit-mode-row');
         var clientRect = editModeRow.getBoundingClientRect();
-        
+
         dropdownButton.querySelector('span').textContent = item.textContent;
-        
+
         getDropDownList().classList.add('hidden');
 
         LEARN_DMN.Message.showMessage({
@@ -151,7 +151,7 @@
     var saveButton = getPage().querySelector('.edit-mode-row .fa-check');
     var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
 
-    saveButton.addEventListener('click', function() {
+    saveButton.addEventListener('click', function () {
       var name = nameInput.value;
       var type = getPage().querySelector('.dropdown-button').textContent.trim();
 
@@ -173,7 +173,7 @@
           height: 200,
           top: 240,
           actionName: 'Next section →',
-          action: function() {
+          action: function () {
             window.location.href = '/learn/structure-data-types';
           }
         });
@@ -185,7 +185,7 @@
           content: 'Try to <b>insert a name</b> and <b>select a type</b>!',
           width: 400,
           height: 140,
-          action: function() {
+          action: function () {
             LEARN_DMN.Lights.turnLightsOn();
           }
         });
@@ -198,7 +198,7 @@
     nameInput.addEventListener('keydown', LEARN_DMN.Message.hideMessage);
   }
 
-  function showLetsGetItStartedMessage () {
+  function showLetsGetItStartedMessage() {
 
     var title = 'Let\'s get it started!';
     var content = '<p>Let\'s open the data types editor, and create a simple data type.</p>';
@@ -209,7 +209,7 @@
       width: 400,
       height: 230,
       actionName: 'Try it now!',
-      action: function() {
+      action: function () {
         LEARN_DMN.Lights.turnLightsOn();
         showDataTypesTabButtonMessage();
       }

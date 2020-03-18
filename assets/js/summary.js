@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   // Summary
   // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -8,7 +8,7 @@
     var anchors = document.querySelectorAll('.learn-home-sidebar .summary li a');
     var currentPath = window.location.pathname;
 
-    anchors.forEach(function(anchor) {
+    anchors.forEach(function (anchor) {
       if (anchor.getAttribute('href') === currentPath) {
         anchor.parentNode.classList.add('current');
       }

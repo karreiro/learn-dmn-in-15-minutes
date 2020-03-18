@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   // Controls
   // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -11,8 +11,8 @@
 
   function getSections() {
     var anchors = document.querySelectorAll('.learn-home-sidebar .summary li a');
-    
-    return Array.prototype.map.call(anchors, function(anchor){
+
+    return Array.prototype.map.call(anchors, function (anchor) {
       return anchor.getAttribute('href');
     });
   }
@@ -26,7 +26,7 @@
   }
 
   function navigateToSection(sectionIndex) {
-    window.location.href = sections[sectionIndex];
+    window.location.href = sections[ sectionIndex ];
   }
 
   function onPrev() {
