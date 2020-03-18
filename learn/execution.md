@@ -76,8 +76,8 @@ mvn clean compile <b>quarkus:dev</b> -DskipTests=true</code></pre>
 
       <div class="language-plaintext highlighter-rouge">
         <div class="highlight">
-          <pre class="highlight"><code>curl -X POST -H 'Content-Type: application/json' http://localhost:8080/Traffic%20Violation --data '
-{
+          <pre class="highlight"><code>curl -X POST -H 'Content-Type: application/json' <b>http://localhost:8080/Traffic%20Violation</b> --data '
+<b>{
   "Driver" : {
     "Name" : "John Doe",
     "Points" : 14,
@@ -88,19 +88,19 @@ mvn clean compile <b>quarkus:dev</b> -DskipTests=true</code></pre>
     "Speed Limit" : 100,
     "Actual Speed" : 120
   }
-}'</code></pre>
+}</b>'</code></pre>
         </div>
       </div>
       <p>Try to execute the script above and understand why the decision node
         <code><b>Should the driver be suspended?</b></code> returns <code>"No"</code>.</p>
 
-      <p>Also, try to execute this:</p>
+      <p>Also, try to execute the following request. Notice the new value on <code>Violation.Actual Speed</code>:</p>
 
 
       <div class="language-plaintext highlighter-rouge">
         <div class="highlight">
-          <pre class="highlight"><code>curl -X POST -H 'Content-Type: application/json' http://localhost:8080/Traffic%20Violation --data '
-{
+          <pre class="highlight"><code>curl -X POST -H 'Content-Type: application/json' <b>http://localhost:8080/Traffic%20Violation</b> --data '
+<b>{
   "Driver" : {
     "Name" : "John Doe",
     "Points" : 14,
@@ -111,7 +111,7 @@ mvn clean compile <b>quarkus:dev</b> -DskipTests=true</code></pre>
     "Speed Limit" : 100,
     "Actual Speed" : 140
   }
-}'</code></pre>
+}</b>'</code></pre>
         </div>
       </div>
 
