@@ -1,7 +1,7 @@
 ---
 layout: learn
 ---
-<div id="section-the-feel-language" class="learn-section">
+<div id="section-execution" class="learn-section">
   <div class="learn-home-content">
     <div class="page">
 
@@ -117,6 +117,7 @@ mvn clean compile <b>quarkus:dev</b> -DskipTests=true</code></pre>
 
       <p>Now, try to execute the script above and understand why the decision node
         <code><b>Should the driver be suspended?</b></code> returns <code>"Yes"</code>.</p>
+      <a class="button next-section" href="/learn/keep-learning">Next section →</a>
     </div>
   </div>
 </div>
