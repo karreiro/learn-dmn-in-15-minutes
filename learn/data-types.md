@@ -5,7 +5,7 @@ layout: learn
 <div id="section-data-types" class="learn-section">
   <div class="learn-home-content">
     <div class="page">
-      <h2>Data Types</h2>
+      <h1>Data Types</h1>
       <hr />
       <p>
         You'll frequently handle data when you build a DMN model, and when you think about data, you need to think about

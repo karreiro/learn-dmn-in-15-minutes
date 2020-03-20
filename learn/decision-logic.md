@@ -5,7 +5,8 @@ layout: learn
 <div id="section-decision-logic" class="learn-section">
   <div class="learn-home-content">
     <div class="page">
-      <h2>Decision logic</h2>
+      <h1>Decision logic</h1>
+      <hr />
 
       <p>
         Decision nodes may express their logic by a variety of decision logic.

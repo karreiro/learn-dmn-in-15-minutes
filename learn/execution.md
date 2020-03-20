@@ -5,7 +5,7 @@ layout: learn
   <div class="learn-home-content">
     <div class="page">
 
-      <h2>Execution</h2>
+      <h1>Execution</h1>
       <hr />
       <p>Once you know most of the DMN features, you probably want to execute your model to see it in action. Let's do
         it in <b>3 simple steps!</b></p>

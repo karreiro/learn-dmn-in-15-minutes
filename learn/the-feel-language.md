@@ -4,7 +4,7 @@ layout: learn
 <div id="section-the-feel-language" class="learn-section">
   <div class="learn-home-content">
     <div class="page">
-      <h2>The FEEL language</h2>
+      <h1>The FEEL language</h1>
       <hr />
 
       <p>
