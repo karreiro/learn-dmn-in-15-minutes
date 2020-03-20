@@ -9,7 +9,7 @@ layout: learn
       <hr />
 
       <p>
-        Decision nodes may express their logic by a variety of decision logic.
+        Decision nodes may express their logic by a variety of boxed expressions:
       </p>
       <p>
         <img src="/assets/decision-logic-1.gif" style="border: 1px solid #DFDFDF" />
@@ -26,7 +26,7 @@ layout: learn
       <h4>2. Contexts</h4>
       <p>
         Contexts represent a collection of one or more key-value pairs, where the value is a decision logic, and the key
-        is the respective identifier. That value field can contain any type of expression: a literal expression, a
+        is the respective identifier. The value can contain any type of expression: a literal expression, a
         decision table, a relation, function, an invocation, or even another context.
 
         Generally, contexts hold one or more local variables (values related to a local context). See an example of a
@@ -49,9 +49,9 @@ layout: learn
         Decision tables are a tabular representation of conditional decision logic. The main elements are:
       </p>
       <ul>
-        <li>input columns, the light blue columns</li>
-        <li>output columns, the dark blue columns</li>
-        <li>the hit policy, the letter in the top-left corner</li>
+        <li>input columns (light blue)</li>
+        <li>output columns (dark blue)</li>
+        <li>the hit policy (the letter in the top-left corner)</li>
       </ul>
       <img src="/assets/decision-logic-3.png" />
       <p>
@@ -102,7 +102,7 @@ layout: learn
 
       <h4>4. Relations</h4>
       <p>
-        Relations are a pretty straight decision logic. They encapsulate lists of expressions:
+        Relations are a pretty straightforward decision logic. They encapsulate lists of expressions:
       </p>
       <img src="/assets/decision-logic-4.png" />
       <p>This relation returns this:</p>
