@@ -61,9 +61,7 @@
   }
 
   function setAllowedElementSelector(selector) {
-    if (selector) {
-      getMessage().setAttribute('data-allowed-element-selector', selector);
-    }
+    getMessage().setAttribute('data-allowed-element-selector', selector);
   }
 
   function getAllowedElementSelector() {
@@ -97,7 +95,6 @@
     enableEffect(options.effect);
     enableCloseButton(options.isCloseButtonEnabled);
     setAllowedElementSelector(options.allowedElementSelector);
-    // SHAKE WHEN OPENED BUT BNUTTON
 
     message.classList.remove('hidden');
 
@@ -150,8 +147,9 @@
 
     var shakeClass = 'box shake-box';
     var cssClass = getMessage().getAttribute('class');
+    var messageClasses = getMessage().classList;
 
-    if (getMessage().classList.contains('shake-box')) {
+    if (messageClasses.contains('shake-box') || messageClasses.contains('hidden')) {
       return;
     }
 

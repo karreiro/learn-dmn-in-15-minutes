@@ -39,17 +39,6 @@
     getNameInput().value = '';
   }
 
-  function showLookAtThisMessage(message, top) {
-    LEARN_DMN.Message.showMessage({
-      title: '↑ Look!',
-      content: message,
-      width: 400,
-      height: 200,
-      top: top,
-      effect: 'vertical-float'
-    });
-  }
-
   function showErrorMessage(message) {
     LEARN_DMN.Lights.turnLightsOff();
     LEARN_DMN.Message.showMessage({
@@ -105,8 +94,6 @@
 
     dropdownItems.forEach(function (item) {
       item.addEventListener('click', function () {
-        var editModeRow = getPage().querySelector('.data-types-row');
-
         dropdownButton.querySelector('span').textContent = item.textContent;
         getDropDownList().classList.add('hidden');
       });
@@ -117,10 +104,6 @@
     var saveButton = getPage().querySelector('.data-types-row .fa-check');
 
     saveButton.addEventListener('click', function () {
-
-      var name = getCurrentName();
-      var type = getPage().querySelector('.dropdown-button').textContent.trim();
-
       saveButtonHandlers[ saveButtonStep ]();
     });
   }
@@ -139,14 +122,23 @@
     if (isDataTypeValid) {
 
       showDataTypeRow(1);
-      showLookAtThisMessage('<b>Great!</b> You\'ve created a structure data type, now let\'s insert information for your first field :-)', 300);
+
+      LEARN_DMN.Message.showMessage({
+        title: '↑ Great! You\'ve created a structure data type',
+        content: '<p>Let\'s insert information for your first field. You know how to do that ;-)</p>',
+        width: 420,
+        height: 180,
+        top: 300,
+        effect: 'vertical-float'
+      });
+
       setupNextStep();
       setupFieldEditableRow();
 
       return;
     }
 
-    showErrorMessage('Try to <b>insert a name</b> and set the type of your data type as <b>strucutre</b>.');
+    showErrorMessage('<p><b>Choose a name</b> for you data type and select <b>Strucutre</b> as the type.</p>');
   }
 
   saveButtonHandlers[ 1 ] = function () {
@@ -158,13 +150,22 @@
     if (isDataTypeValid) {
 
       showDataTypeRow(2);
-      showLookAtThisMessage('<b>Great!</b> You\'ve created a field into your structure data type, now let\'s insert another field :-)', 370);
+
+      LEARN_DMN.Message.showMessage({
+        title: '↑ Great! You\'ve created the first field',
+        content: '<p>Now your structure data type has one field! Let\'s create another one :-)',
+        width: 400,
+        height: 200,
+        top: 370,
+        effect: 'vertical-float'
+      });
+
       setupNextStep();
 
       return;
     }
 
-    showErrorMessage('Try to <b>insert a name</b> and <b>set a type</b> for your data type.');
+    showErrorMessage('Choose <b>any name</b> and <b>any type</b> for you data type.');
   }
 
   saveButtonHandlers[ 2 ] = function () {
@@ -182,10 +183,11 @@
       LEARN_DMN.Lights.turnLightsOff();
       LEARN_DMN.Message.showMessage({
         title: 'Congratulations!',
-        content: '<p>You successfuly created your first structure data type!</p>',
+        content: '<p>You have successfully created your first structure data type!</p>',
         width: 400,
         height: 225,
         top: 240,
+        allowedElementSelector: '',
         actionName: 'Next section →',
         action: function () {
           window.location.href = '/learn/the-feel-language';
@@ -203,23 +205,24 @@
       return;
     }
 
-    showErrorMessage('Try to <b>insert a name</b> and <a>set a type</a> for your data type.');
+    showErrorMessage('Choose <b>any name</b> and <b>any type</b> for you data type.');
   }
 
   LEARN_DMN.Lights.turnLightsOff();
 
   LEARN_DMN.Message.showMessage({
-    title: 'Hey!',
-    content: 'Let\'s create a strucutre data type! :-)',
+    title: 'Let\'s create a structure data type now!',
+    content: 'Different from regular data types, structure ones have fields ;-)',
     width: 400,
-    height: 200,
+    height: 220,
+    allowedElementSelector: '',
     actionName: 'Start now',
     action: function () {
       LEARN_DMN.Lights.turnLightsOn();
       LEARN_DMN.Message.showMessage({
-        title: '↑ Look!',
-        content: '<p><b>Insert a name</b> and set the type of your data type as <b>strucutre</b> :-)</p>',
-        width: 400,
+        title: '↑ Type a name and select "Structure" as the type',
+        content: '<p>Just like you do for a regular data type, but select "Structure" in the type selector.</p>',
+        width: 440,
         height: 180,
         top: 240,
         left: 20,

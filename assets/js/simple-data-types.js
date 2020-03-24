@@ -21,11 +21,6 @@
     screen.classList.remove('hidden');
   }
 
-  function hideDataTypesListScreen() {
-    var screen = getPage().querySelector('.data-types-list-screen');
-    screen.classList.add('hidden');
-  }
-
   // -- Data Types placeholder screen
 
   function showDataTypesPlaceholderScreen() {
@@ -35,8 +30,8 @@
     screen.classList.remove('hidden');
 
     LEARN_DMN.Message.showMessage({
-      title: '← Look!',
-      content: '<p>Click here to create your first data type!</p>',
+      title: '← Click here to create your first data type!',
+      content: '<p>It will be quite simple, I promise :-)</p>',
       width: 400,
       height: 140,
       top: addCustomDataType.getBoundingClientRect().y,
@@ -76,6 +71,15 @@
       });
     }
 
+    function isDataTypesTabActivated() {
+      var tabItem = getPage().querySelector('.data-types-tab-item');
+      return tabItem.classList.contains('active');
+    }
+
+    if (isDataTypesTabActivated()) {
+      return;
+    }
+
     LEARN_DMN.Message.hideMessage();
 
     activateDataTypesTab();
@@ -100,10 +104,10 @@
       nameInput.focus();
 
       LEARN_DMN.Message.showMessage({
-        title: '↑ Look!',
-        content: '<p>Insert a name and select a type.</p>',
+        title: '↑ Type a name and select a type',
+        content: '<p>You can choose whatever name and type you want, like: <b>full name</b> with the type <b>string</b>.</p>',
         width: 400,
-        height: 140,
+        height: 170,
         top: 240,
         left: 20,
         effect: 'vertical-float'
@@ -135,10 +139,10 @@
         getDropDownList().classList.add('hidden');
 
         LEARN_DMN.Message.showMessage({
-          title: '↑ Look!',
-          content: '<p>Seve your new data type!</p>',
+          title: '↑ Save your brand new data type!',
+          content: '<p>Just click on the "check" icon to save your new data type.</p>',
           width: 400,
-          height: 140,
+          height: 170,
           top: 240,
           left: clientRect.x + clientRect.width - 400,
           effect: 'vertical-float'
@@ -166,12 +170,14 @@
         closedModeRow.querySelector('.name').textContent = name;
         closedModeRow.querySelector('.type').textContent = '(' + type + ')';
 
+        LEARN_DMN.Lights.turnLightsOff();
         LEARN_DMN.Message.showMessage({
           title: 'Congratulations!',
-          content: '<p>You successfuly created your first data type!</p>',
+          content: '<p>You have successfully created your first DMN data type!</p>',
           width: 400,
-          height: 200,
+          height: 225,
           top: 240,
+          allowedElementSelector: '',
           actionName: 'Next section →',
           action: function () {
             window.location.href = '/learn/structure-data-types';
@@ -191,11 +197,6 @@
         });
       }
     });
-  }
-
-  function setupNameInput() {
-    var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
-    nameInput.addEventListener('keydown', LEARN_DMN.Message.hideMessage);
   }
 
   function showLetsGetItStartedMessage() {
@@ -218,8 +219,8 @@
 
   function showDataTypesTabButtonMessage() {
 
-    var title = '↑ Here\'s the data types tab';
-    var content = '<p>Try to open it! :-)</p>';
+    var title = '↑ Here\'s the Data Types tab';
+    var content = '<p>Click on it to open the Data Types page :-)</p>';
 
     LEARN_DMN.Message.showMessage({
       title: title,
@@ -231,6 +232,11 @@
       allowedElementSelector: '#section-simple-data-types .data-types-tab-item',
       effect: 'vertical-float'
     });
+  }
+
+  function setupNameInput() {
+    var nameInput = getPage().querySelector('.edit-mode-row [type="text"]');
+    nameInput.addEventListener('keydown', LEARN_DMN.Message.hideMessage);
   }
 
   LEARN_DMN.Lights.turnLightsOff();
