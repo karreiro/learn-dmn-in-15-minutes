@@ -20,7 +20,7 @@ layout: learn
 
       <h4>1. Literal expressions</h4>
       <p>
-        Literal expressions hold a text (FEEL expression) that determines the logic for producing the output value.
+        Literal expressions hold a text (FEEL expression) that produces the output value.
       </p>
 
       <h4>2. Contexts</h4>
@@ -30,7 +30,7 @@ layout: learn
         decision table, a relation, function, an invocation, or even another context.
 
         Generally, contexts hold one or more local variables (values related to a local context). See an example of a
-        Context with two key-value pairs, both with an identifier and a literal expression:
+        Context key-value pair with an identifier and its literal expression:
       </p>
 
       <img src="/assets/decision-logic-2.png" />
@@ -38,9 +38,9 @@ layout: learn
       <p>
         Considering this example, when <code>"Driver points"</code> and <code>"Violation points"</code> are,
         respectively, <code>10</code> and <code>5</code>, the output node <code>"Should the driver be suspended?"</code>
-        would return <code>"NO"</code>. However, with <code>"Driver points"</code> and <code>"Violation points"</code>
-        with <code>10</code> and <code>15</code>, the output node <code>"Should the driver be suspended?"</code> would
-        return <code>"YES"</code>.
+        returns <code>"NO"</code>. However, with <code>"Driver points"</code> and <code>"Violation points"</code>
+        with <code>10</code> and <code>15</code>, the output node <code>"Should the driver be suspended?"</code> returns
+        <code>"YES"</code>.
       </p>
 
       <h4>3. Decision Tables</h4>
@@ -49,18 +49,18 @@ layout: learn
         Decision tables are a tabular representation of conditional decision logic. The main elements are:
       </p>
       <ul>
-        <li>input columns (light blue)</li>
-        <li>output columns (dark blue)</li>
-        <li>the hit policy (the letter in the top-left corner)</li>
+        <li>Input columns (represented by the light blue header)</li>
+        <li>Output columns (represented by the dark blue header)</li>
+        <li>Hit Policy (represented by the letter in the top-left corner)</li>
       </ul>
       <img src="/assets/decision-logic-3.png" />
       <p>
-        The mechanism is quite intuitive. Each row represents a rule, and when the input matches, the output value is
-        selected as the decision output. When multiple rows match, the hit policy decides the right row (generally,
-        Unique is the best hit policy).
+        The mechanism is quite intuitive. Each row represents a rule, thus when the input matches, the respective output
+        value is selected as the decision output. When multiple rows match, the hit policy decides the right row
+        (generally, <b>Unique</b> is the best hit policy).
       </p>
       <p>
-        Considering the decision table above check the following scenarios and the expected output:
+        Considering the decision table above, check the following scenarios and their expected output:
       </p>
       <div class="language-plaintext highlighter-rouge">
         <div class="highlight">
@@ -132,7 +132,7 @@ layout: learn
 
         <img src="/assets/decision-logic-5.png" />
 
-        Usually, try to use business knowledge model nodes for defining functions, but you can define them of decision
+        Usually, try to use business knowledge model nodes for defining functions, but you can define them on decision
         nodes as well, depending on your context.
       </p>
 
