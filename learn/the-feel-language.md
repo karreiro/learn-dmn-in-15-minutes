@@ -8,9 +8,9 @@ layout: learn
       <hr />
 
       <p>
-        Literal expressions, decision tables, and many other DMN elements depend on textual expressions to work. The
+        Literal expressions, decision tables, and many other DMN elements rely on textual expressions to work. The
         <b>FEEL</b> (Friendly Enough Expression Language) shines as a readable language for programmers and business
-        analysts. Its design follows these principles:
+        analysts. The language design follows these principles:
       </p>
       <ul>
         <li>Side-effect free</li>
@@ -25,7 +25,7 @@ layout: learn
       <h4>Conditional statements</h4>
       <p>
         Here you can see an example of a decision node with a literal expression as the decision logic. Notice how the
-        FEEL expression defines the logic of the node:
+        FEEL expression defines the output value:
       </p>
       <img src="/assets/the-feel-language.png" width="80%" />
       <p>
@@ -333,7 +333,7 @@ layout: learn
         the <a href="https://www.omg.org/spec/DMN/1.2/PDF">DMN spec</a>. If you're feeling inspired, take a look there
         :-)
       </p>
-      <a class="button next-section" href="/learn/visual-notation">Next section →</a>
+      <a class="button next-section" href="/learn/execution">Next section →</a>
     </div>
   </div>
 </div>

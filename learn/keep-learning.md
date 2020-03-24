@@ -11,11 +11,11 @@ layout: learn
         <img src="/assets/keep-learning.png" />
       </div>
       <p>
-        You've finnaly conclude this course and learned what DMN is and how you can use it! But you don't need to stop
-        learning right now.
+        You've finally concluded this course, learned all DMN essential components, and now you're officially ready to
+        use them! But there's no reason to stop learning right now.
       </p>
       <p>
-        Here's a bunch of valuable content that can guide you tropught your DMN jouney:
+        Here's a collection of valuable content that can guide you through your DMN journey:
       </p>
       <ul>
         <li>
@@ -32,9 +32,9 @@ layout: learn
         </li>
       </ul>
       <p>
-        I hope I've liked this course, and please report any enhancement <a
+        I hope you have liked this course, and please report any enhancement <a
           href="https://github.com/karreiro/learn-dmn-in-15-minutes/issues">here</a>. Contributions are more than
-        welcome :-)
+        welcomed :-)
       </p>
     </div>
   </div>
