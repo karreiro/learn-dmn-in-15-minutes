@@ -329,9 +329,9 @@ layout: learn
         </tbody>
       </table>
       <p>
-        Here you've learned the most frequently used FEEL structures. There are other powerful features you may learn on
-        the <a href="https://www.omg.org/spec/DMN/1.2/PDF">DMN spec</a>. If you're feeling inspired, take a look there
-        :-)
+        Here you've learned the most frequently used FEEL expressions. There are other powerful features you may learn
+        on the <a href="https://www.omg.org/spec/DMN/1.2/PDF">DMN spec</a>. If you're feeling inspired, take a look
+        there :-)
       </p>
       <a class="button next-section" href="/learn/execution">Next section →</a>
     </div>

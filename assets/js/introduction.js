@@ -6,7 +6,7 @@
   var title = 'Let\'s get started!';
   var content = '<p>Welcome to the <b>Learn DMN in 15 minutes</b> course!</p>' +
     '<img src="/assets/logo.png" />' +
-    '<p>If you notice any unclear example or some possible enhacement, please ' +
+    '<p>If you notice any unclear example or some possible enhancement, please ' +
     'report an issue <a href=\'https://github.com/karreiro/learn-dmn-in-15-minutes/issues\'>here</a>' +
     ', and we will fix it as soon as possible!</p>' +
     '<p>Contributions are quite welcomed as well.</p>' +

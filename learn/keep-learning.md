@@ -11,7 +11,7 @@ layout: learn
         <img src="/assets/keep-learning.png" />
       </div>
       <p>
-        You've finally concluded this course, learned all DMN essential components, and now you're officially ready to
+        You've concluded this course, learned all DMN essential components, and now you're officially ready to
         use them! But there's no reason to stop learning right now.
       </p>
       <p>
