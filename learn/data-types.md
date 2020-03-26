@@ -25,7 +25,7 @@ layout: learn
       <blockquote cite="https://www.omg.org/spec/DMN/1.2/PDF">
         <p>
           <i class="fa fa-graduation-cap"></i>
-          The <a href="https://www.omg.org/spec/DMN/About-DMN/">DMN Specification</a> often refeers to data types as Item Definitions, both names means strictly the same
+          The <a href="https://www.omg.org/spec/DMN/About-DMN/">DMN Specification</a> often refers to data types as Item Definitions, both names means strictly the same
           thing.
         </p>
       </blockquote>
