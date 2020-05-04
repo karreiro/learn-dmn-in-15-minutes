@@ -140,6 +140,27 @@ layout: learn
       <p>
         Invocations map the invocation for business knowledge model nodes.
       </p>
+
+      <h4>7. Lists</h4>
+      <p>
+        Lists represent a group of FEEL expressions. You may use it to define complex items for a particular decision, like this:
+      </p>
+      <img src="/assets/decision-logic-6.png" />
+      <p>
+        Each cell of this the list above is calling a BKM function that returns a value for each item. Hence, the output for this list expression would be something like this:
+      </p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>"services": [
+  "Acme Agency (status: running)",
+  "Global Scoring (status: stopped)",
+  "Nook Inc. (status: running)"
+]
+</code></pre>
+        </div>
+      </div>
+      <p>It's a pretty straight forward boxed expression.</p>
+
       <a class="button next-section" href="/learn/data-types">Next section →</a>
     </div>
   </div>
