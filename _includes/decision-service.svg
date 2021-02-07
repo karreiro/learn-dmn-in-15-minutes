@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="0 0 200 200" troke-width="1"
+  fill="white" stroke-width="2">
+  <g>
+    <rect class="decisionService" x="1" y="1" rx="40" ry="40" width="195" height="195" stroke-width="2" fill="white"
+      stroke="black" />
+    <line x1="0" y1="50" x2="195" y2="50" stroke-width="2" stroke="black" />
+    <text x="48" y="30" font-family="arial" font-size="14" fill="black">Decision Service</text>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect x="2" y="2" width="135" height="55" fill="white">
+    </rect>
+    <path id="shape1" class="text_annotation_main" d="M7.4,58.6H2.6V1.4h4.8" stroke-width="2" fill="white"
+      stroke="black" />
+    <text x="22" y="35.5" font-family="arial" font-size="14" fill="black">Text Annotation</text>
+  </g>
+</svg>

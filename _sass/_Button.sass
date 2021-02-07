@@ -7,26 +7,28 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit']
-  background-color: $color-secondary
-  border: .1rem solid $color-secondary
-  border-radius: .4rem
-  color: $color-initial
+  background-color: $color-primary
+  border: none
+  border-bottom: .4rem solid $color-secondary
+  border-radius: .7rem .7rem .8rem .8rem
+  color: $color-light
   cursor: pointer
   display: inline-block
   font-size: 1.1rem
   font-weight: 700
-  height: 3.8rem
   letter-spacing: .1rem
   line-height: 3.8rem
-  padding: 0 3.0rem
+  padding: 0 3rem
   text-align: center
   text-decoration: none
   text-transform: uppercase
   white-space: nowrap
+  user-select: none
 
   &:focus,
   &:hover
-    color: $color-initial
+    color: $color-light
+    opacity: .9
     outline: 0
 
   &[disabled]
@@ -42,8 +44,8 @@ input[type='submit']
     &:focus,
     &:hover
       background-color: transparent
-      border-color: $color-secondary
-      color: $color-secondary
+      border-color: $color-dark
+      color: $color-dark
 
     &[disabled]
 
@@ -61,7 +63,7 @@ input[type='submit']
     &:hover
       background-color: transparent
       border-color: transparent
-      color: $color-secondary
+      color: $color-dark
 
     &[disabled]
 

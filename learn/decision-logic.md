@@ -1,114 +1,84 @@
 ---
-layout: learn
+layout: learn-page
+title: Decision logic
 ---
 
-<div id="section-decision-logic" class="learn-section">
-  <div class="learn-home-content">
-    <div class="page">
-      <h1>Decision logic</h1>
-      <hr />
+Decision nodes may express their logic by a variety of boxed expressions:
 
-      <p>
-        Decision nodes may express their logic by a variety of boxed expressions:
-      </p>
-      <p>
-        <img src="/assets/decision-logic-1.gif" style="border: 1px solid #DFDFDF" />
-      </p>
-      <p>
-        Let's check how each one works :-)
-      </p>
+![Diagram 1](../assets/decision-logic-1.gif)
 
-      <h4>1. Literal expressions</h4>
-      <p>
-        Literal expressions hold a text (FEEL expression) that produces the output value.
-      </p>
+Let's check how each one works :-)
 
-      <h4>2. Contexts</h4>
-      <p>
-        Contexts represent a collection of one or more key-value pairs, where the value is a decision logic, and the key
-        is the respective identifier. The value can contain any type of expression: a literal expression, a
-        decision table, a relation, function, an invocation, or even another context.
+### 1. Literal expressions
 
-        Generally, contexts hold one or more local variables (values related to a local context). See an example of a
-        Context key-value pair with an identifier and its literal expression:
-      </p>
+Literal expressions hold a text (FEEL expression) that produces the output value.
 
-      <img src="/assets/decision-logic-2.png" />
+### 2. Contexts
 
-      <p>
-        Considering this example, when <code>"Driver points"</code> and <code>"Violation points"</code> are,
-        respectively, <code>10</code> and <code>5</code>, the output node <code>"Should the driver be suspended?"</code>
-        returns <code>"NO"</code>. However, with <code>"Driver points"</code> and <code>"Violation points"</code>
-        with <code>10</code> and <code>15</code>, the output node <code>"Should the driver be suspended?"</code> returns
-        <code>"YES"</code>.
-      </p>
+Contexts represent a collection of one or more key-value pairs, where the value is a decision logic, and the key is the respective identifier. The value can contain any type of expression: a literal expression, a decision table, a relation, function, an invocation, or even another context. Generally, contexts hold one or more local variables (values related to a local context). See an example of a Context key-value pair with an identifier and its literal expression:
 
-      <h4>3. Decision Tables</h4>
+![Diagram 2](../assets/decision-logic-2.png)
 
-      <p>
-        Decision tables are a tabular representation of conditional decision logic. The main elements are:
-      </p>
-      <ul>
-        <li>Input columns (represented by the light blue header)</li>
-        <li>Output columns (represented by the dark blue header)</li>
-        <li>Hit Policy (represented by the letter in the top-left corner)</li>
-      </ul>
-      <img src="/assets/decision-logic-3.png" />
-      <p>
-        The mechanism is quite intuitive. Each row represents a rule, thus when the input matches, the respective output
-        value is selected as the decision output. When multiple rows match, the hit policy decides the right row
-        (generally, <b>Unique</b> is the best hit policy).
-      </p>
-      <p>
-        Considering the decision table above, check the following scenarios and their expected output:
-      </p>
-      <div class="language-plaintext highlighter-rouge">
-        <div class="highlight">
-          <pre class="highlight"><code>/* === SCENARIO 1 === */
+Considering this example, when **Driver points** and **Violation points** are, respectively, `10` and `5`, the output node **Should the driver be suspended?** returns `"NO"`. However, with **Driver points** and **Violation points** with `10` and `15`, the output node **Should the driver be suspended?** returns `"YES"`.
+
+### 3. Decision Tables
+
+Decision tables are a tabular representation of conditional decision logic. The main elements are:
+
+- Input columns (represented by the light blue header)
+- Output columns (represented by the dark blue header)
+- Hit Policy (represented by the letter in the top-left corner)
+
+![Diagram 3](../assets/decision-logic-3.png)
+
+The mechanism is quite intuitive. Each row represents a rule, thus when the input matches, the respective output value is selected as the decision output. When multiple rows match, the hit policy decides the right row (generally, **Unique** is the best hit policy).
+
+Considering the decision table above, check the following scenarios and their expected output:
+
+```
+/* === SCENARIO 1 === */
 
 /* = Actual input data = */
-<b>"Violation": {
+"Violation": {
   "Type": "speed",
   "Speed Limit": 60,
   "Actual Speed": 100
-}</b>
+}
 
 /* = Expected output data = */
-<b>"Fine": {
+"Fine": {
   "Points": 7,
   "Amount": 1000
-}</b></code></pre>
-        </div>
-      </div>
+}
+```
 
-      <div class="language-plaintext highlighter-rouge">
-        <div class="highlight">
-          <pre class="highlight"><code>/* === SCENARIO 2 === */
+```
+/* === SCENARIO 2 === */
 
 /* = Actual input data = */
-<b>"Violation": {
+"Violation": {
   "Type": "speed",
   "Speed Limit": 60,
   "Actual Speed": 70
-}</b>
+}
 
 /* = Expected output data = */
-<b>"Fine": {
+"Fine": {
   "Points": 3,
   "Amount": 500
-}</b></code></pre>
-        </div>
-      </div>
+}
+```
 
-      <h4>4. Relations</h4>
-      <p>
-        Relations are a pretty straightforward decision logic. They encapsulate lists of expressions:
-      </p>
-      <img src="/assets/decision-logic-4.png" />
-      <p>This relation returns this:</p>
-      <div class="language-plaintext highlighter-rouge">
-        <div class="highlight">
-          <pre class="highlight"><code>[
+### 4. Relations
+
+Relations are a pretty straightforward decision logic. They encapsulate lists of expressions:
+
+![Diagram 4](../assets/decision-logic-4.png)
+
+This relation returns this:
+
+```
+[
   {
     "first column": 2,
     "second column": 0.75
@@ -121,47 +91,48 @@ layout: learn
     "first column": -1,
     "second column": 0
   }
-]</code></pre>
-        </div>
-      </div>
+]
+```
 
-      <h4>5. Functions</h4>
-      <p>
-        Functions define reusable operations into your model. When you can't or don't want to use FEEL to express some
-        specific logic, you can also call it from the PMML or Java world.
+### 5. Functions
 
-        <img src="/assets/decision-logic-5.png" />
+Functions define reusable operations into your model. When you can't or don't want to use FEEL to express some specific logic, you can also call it from the PMML or Java world.
 
-        Usually, try to use business knowledge model nodes for defining functions, but you can define them on decision
-        nodes as well, depending on your context.
-      </p>
+![Diagram 5](../assets/decision-logic-5.png)
 
-      <h4>6. Invocations</h4>
-      <p>
-        Invocations map the invocation for business knowledge model nodes.
-      </p>
+Usually, try to use business knowledge model nodes for defining functions, but you can define them on decision nodes as well, depending on your context.
 
-      <h4>7. Lists</h4>
-      <p>
-        Lists represent a group of FEEL expressions. You may use it to define complex items for a particular decision, like this:
-      </p>
-      <img src="/assets/decision-logic-6.png" />
-      <p>
-        Each cell of this the list above is calling a BKM function that returns a value for each item. Hence, the output for this list expression would be something like this:
-      </p>
-      <div class="language-plaintext highlighter-rouge">
-        <div class="highlight">
-          <pre class="highlight"><code>"services": [
+### 6. Invocations
+
+Invocations map the invocation for business knowledge model nodes:
+
+![Diagram 6](../assets/decision-logic-6.png)
+
+If we execute the model above, we would get something like this:
+
+```
+{
+  "len": "function len( str )",
+  "call len": 23
+}
+```
+
+### 7. Lists
+
+Lists represent a group of FEEL expressions. You may use it to define complex items for a particular decision, like this:
+
+![Diagram 7](../assets/decision-logic-7.png)
+
+Each cell of this the list above is calling a BKM function that returns a value for each item. Hence, the output for this list expression would be something like this:
+
+```
+"services": [
   "Acme Agency (status: running)",
   "Global Scoring (status: stopped)",
   "Nook Inc. (status: running)"
 ]
-</code></pre>
-        </div>
-      </div>
-      <p>It's a pretty straight forward boxed expression.</p>
+```
 
-      <a class="button next-section" href="/learn/data-types">Next section →</a>
-    </div>
-  </div>
-</div>
+It's a pretty straight forward boxed expression.
+
+<a class="button next-section" href="/learn/data-types">Next section →</a>

@@ -1,9 +1,8 @@
 (function () {
-
   window.LEARN_DMN = window.LEARN_DMN || {};
 
   var LEARN_DMN = window.LEARN_DMN;
-  var ALLOWED_EFFECTS = [ 'vertical-float', 'horizontal-float' ];
+  var ALLOWED_EFFECTS = ["vertical-float", "horizontal-float"];
 
   LEARN_DMN.Message = LEARN_DMN.Message || {};
 
@@ -11,37 +10,36 @@
 
   function getMessage() {
     if (LEARN_DMN.Message.instance === undefined) {
-      LEARN_DMN.Message.instance = document.querySelector('#message');
+      LEARN_DMN.Message.instance = document.querySelector("#message");
     }
     return LEARN_DMN.Message.instance;
   }
 
   function setTitle(title) {
-    getMessage().querySelector('.title').textContent = title;
+    getMessage().querySelector(".title").textContent = title;
   }
 
   function setContent(content) {
-    getMessage().querySelector('.content').innerHTML = content;
+    getMessage().querySelector(".content").innerHTML = content;
   }
 
   function setActionName(actionName) {
-
     var hasActionName = !!actionName;
-    var button = getMessage().querySelector('.actions button');
+    var button = getMessage().querySelector(".actions button");
 
     if (hasActionName) {
-      button.classList.remove('hidden');
+      button.classList.remove("hidden");
     } else {
-      button.classList.add('hidden');
+      button.classList.add("hidden");
     }
 
     button.textContent = actionName;
   }
 
   function enableAction(action) {
-    var button = getMessage().querySelector('.actions button');
+    var button = getMessage().querySelector(".actions button");
     var onClick = action || hideMessage;
-    button.addEventListener('click', onClick);
+    button.addEventListener("click", onClick);
   }
 
   function enableEffect(effect) {
@@ -51,21 +49,24 @@
     }
   }
 
+  function getCloseButton() {
+    return getMessage().querySelector(".close");
+  }
+
   function enableCloseButton(isCloseButtonEnabled) {
-    var closeButton = getMessage().querySelector('.close');
     if (isCloseButtonEnabled) {
-      closeButton.classList.remove('disabled')
+      getCloseButton().classList.remove("disabled");
     } else {
-      closeButton.classList.add('disabled')
+      getCloseButton().classList.add("disabled");
     }
   }
 
   function setAllowedElementSelector(selector) {
-    getMessage().setAttribute('data-allowed-element-selector', selector);
+    getMessage().setAttribute("data-allowed-element-selector", selector);
   }
 
   function getAllowedElementSelector() {
-    return getMessage().getAttribute('data-allowed-element-selector') || '';
+    return getMessage().getAttribute("data-allowed-element-selector") || "";
   }
 
   function disableEffects() {
@@ -75,16 +76,19 @@
   }
 
   function showMessage(options) {
-
     var opts = options || {};
     var width = parseInt(options.width || 550);
     var height = parseInt(options.height || 400);
-    var top = options.top ? options.top + 'px' : 'calc(50% - ' + (height / 2) + 'px)';
-    var left = options.left ? options.left + 'px' : 'calc(50% - ' + ((width / 2) + 150) + 'px)';
+    var top = options.top
+      ? options.top + "px"
+      : "calc(50% - " + height / 2 + "px)";
+    var left = options.left
+      ? options.left + "px"
+      : "calc(50% - " + (width / 2 + 150) + "px)";
     var message = getMessage();
 
-    message.style.width = !width ? opts.width : width + 'px';
-    message.style.height = !height ? opts.height : height + 'px'
+    message.style.width = !width ? opts.width : width + "px";
+    message.style.height = !height ? opts.height : height + "px";
     message.style.top = top;
     message.style.left = left;
 
@@ -96,17 +100,16 @@
     enableCloseButton(options.isCloseButtonEnabled);
     setAllowedElementSelector(options.allowedElementSelector);
 
-    message.classList.remove('hidden');
+    message.classList.remove("hidden");
 
     LEARN_DMN.Message.isOpened = true;
   }
 
   function hideMessage() {
-
     var message = getMessage();
 
-    message.classList.add('hidden');
-    setAllowedElementSelector('');
+    message.classList.add("hidden");
+    setAllowedElementSelector("");
 
     LEARN_DMN.Lights.turnLightsOn();
     LEARN_DMN.Message.isOpened = false;
@@ -114,28 +117,56 @@
 
   function setupMessage() {
     function setupCloseButton() {
-      var closeButton = getMessage().querySelector('.close');
-      closeButton.addEventListener('click', hideMessage);
+      var closeButton = getMessage().querySelector(".close");
+      closeButton.addEventListener("click", hideMessage);
     }
 
     function setupEscKeyButton() {
       window.onkeydown = function (event) {
         if (event.keyCode === 27) {
-          shakeMessageBox();
+          if (getCloseButton().classList.contains("disabled")) {
+            shakeMessageBox();
+          } else {
+            hideMessage();
+          }
         }
       };
     }
 
-    function setupFocusHandler() {
-      document.addEventListener('click', function (event) {
-        var allowedElement = getAllowedElementSelector();
-        if (allowedElement.length > 0 && !event.target.matches(allowedElement)) {
-          shakeMessageBox();
-          event.preventDefault();
-          event.stopPropagation();
-        }
+    function isSectionLink(event) {
+      var href = event.target.href || "";
+      return href.match("/learn/");
+    }
 
-      }, false);
+    function isHomeLink(event) {
+      return event.target.matches(".learn-home-nav a");
+    }
+
+    function isAllowedElement(event) {
+      return event.target.matches(getAllowedElementSelector());
+    }
+
+    function hasAllowedElement() {
+      return getAllowedElementSelector().length > 0;
+    }
+
+    function setupFocusHandler() {
+      document.addEventListener(
+        "click",
+        function (event) {
+          if (
+            hasAllowedElement() &&
+            !isSectionLink(event) &&
+            !isAllowedElement(event) &&
+            !isHomeLink(event)
+          ) {
+            shakeMessageBox();
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        },
+        false
+      );
     }
 
     setupCloseButton();
@@ -144,19 +175,21 @@
   }
 
   function shakeMessageBox() {
-
-    var shakeClass = 'box shake-box';
-    var cssClass = getMessage().getAttribute('class');
+    var shakeClass = "box shake-box";
+    var cssClass = getMessage().getAttribute("class");
     var messageClasses = getMessage().classList;
 
-    if (messageClasses.contains('shake-box') || messageClasses.contains('hidden')) {
+    if (
+      messageClasses.contains("shake-box") ||
+      messageClasses.contains("hidden")
+    ) {
       return;
     }
 
-    getMessage().setAttribute('class', shakeClass);
+    getMessage().setAttribute("class", shakeClass);
 
     setTimeout(function () {
-      getMessage().setAttribute('class', cssClass);
+      getMessage().setAttribute("class", cssClass);
     }, 500);
   }
 
@@ -165,5 +198,4 @@
   LEARN_DMN.Message.showMessage = showMessage;
   LEARN_DMN.Message.hideMessage = hideMessage;
   LEARN_DMN.Message.setupMessage = setupMessage;
-  LEARN_DMN.Message.shakeMessageBox = shakeMessageBox;
-}());
+})();

@@ -21,16 +21,27 @@
   display: none
 
 .lights-off
-  &::after
+  &::after,
+  &::before
     content: " "
     position: fixed
-    width: calc(100% - 300px)
-    height: calc(100% - 60px)
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(0, 0, 0, 0.8)
     z-index: 1
-    top: 60px
+    top: 0
+  &::after
+    width: calc(100% - 300px)
+    height: 100%
+    left: 0
+  &::before
+    width: 300px
+    height: 60px
+    left: calc(100% - 300px)
   .learn-home-content
-    filter: blur(1px)
+    filter: blur(2px)
+  .learn-controls,
+  .learn-home-sidebar
+    filter: brightness(.5)
+
 
 .box.closed
   opacity: 0

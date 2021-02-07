@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path class="knowledgeSource" d="M1.5,1.5h107V51C90.7,41,72.8,41,55,51S19.3,61,1.5,51V1.5z" stroke-width="2"
+      fill="white" stroke="black" />
+    <text x="19" y="22" font-family="arial" font-size="14" fill="black">Knowledge</text>
+    <text x="32" y="37" font-family="arial" font-size="14" fill="black">Source</text>
+  </g>
+</svg>

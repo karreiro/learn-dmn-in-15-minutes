@@ -8,67 +8,50 @@
   margin: 0 auto
 
 .home-banner
-  background-image: url(/assets/logo.png)
-  height: 310px
-  margin-top: 5px
-  border-bottom: 3px solid #DDD
-  background-size: 380px
+  background-image: url(/assets/logo-learn-dmn.png)
+  height: 35rem
+  border-bottom: 2px solid #eaeaea
+  background-size: 37rem
+  background-position-x: center
+  padding: 26.2rem 0 0
+  text-align: center
   background-repeat: no-repeat
-  padding: 0 0 0 475px
-  background-position-x: 75px
+  max-width: 90rem
   h1
-    font-size: 10rem
-    padding-top: 4.5rem
+    font-size: 5.75rem
+    user-select: none
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .2)
+    sup
+      font-size: 2rem
+      margin: 1rem
+      display: inline-block
+      top: -20px
+    sup,
     span
-      display: block
-      line-height: 7.5rem
-      color: #a0a6a9
-      i
-        font-style: normal
-        color: $color-secondary
-
-  @media (max-width: 70.0rem)
-    &
-      margin-top: 30px
-      background-size: 200px
-      padding: 180px 0 0
-      background-position: center top
-      height: 300px
-      h1
-        font-size: 6rem
-        padding: 0
-        text-align: center
-        span
-          display: inline-block
-
-  @media (max-width: 45.0rem)
-    &
-      height: 350px
-    h1
-      span
-        display: block
+      opacity: .4
 
 .home-sub-banner
-  margin-top: 25px
+  margin-top: 1rem
   text-align: center
   button
     background-color: $color-primary
-    border: .1rem solid $color-primary
     margin: 2.25rem auto 1.5rem
     line-height: 3rem
-    border-bottom: .4rem solid #e09242
+    border: .1rem solid $color-secondary
+    border-bottom: 4px solid $color-secondary
     padding: 0 7rem
     height: 80px
-    border-radius: 0.4rem 0.4rem 0.6rem 0.6rem
+    border-radius: 1rem
     font-size: 1.75rem
-    text-shadow: 0 0.2rem 0 #e2882c
+    text-shadow: 0 0.2rem 0 $color-secondary
     box-shadow: 0 0 0 5px rgba(49, 49, 49, .1)
-    transition: all .25s ease-in-out
+    transition: filter .15s ease-in-out
+    transform: translateZ(0)
     &:hover
-      filter: contrast(1.5)
+      filter: brightness(.9)
   .try,
   .or
-    font-family: "Roboto", serif
+    font-family: $paragraph
     font-style: italic
     margin: 0 auto
     color: #75787b
@@ -85,8 +68,6 @@
     margin: 0 12rem 2rem
     opacity: .95
     text-align: left
-    // & + p
-    //   margin: 0 18rem 3rem
   @media (max-width: 45.0rem)
     p, p + p
       margin: 0 2rem 3rem
@@ -96,3 +77,15 @@
       padding: 0 15px
       content: "―"
       opacity: .5
+
+
+@media (max-width: 50.0rem)
+  .home-banner
+    zoom: .9
+  .home-sub-banner
+    button
+      zoom: .8
+
+@media (max-width: 40.0rem)
+  .home-banner
+    zoom: .7

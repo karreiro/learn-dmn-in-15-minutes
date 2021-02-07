@@ -1,35 +1,18 @@
 ---
-layout: learn
+layout: learn-page
+title: Data Types
 ---
 
-<div id="section-data-types" class="learn-section">
-  <div class="learn-home-content">
-    <div class="page">
-      <h1>Data Types</h1>
-      <hr />
-      <p>
-        You'll frequently handle data when you build a DMN model, and when you think about data, you need to think about
-        types.
-      </p>
-      <p>
-        Sometimes you will face very simple situations, like this:
-        <img src="/assets/data-types-1.png" />
-      </p>
-      <p>
-        On this example, the decision node, possibly a decision table, checks the input nodes <b>Age</b> and <b>Driver
-          license type</b>. In this example the <i>values</i> for these input nodes are,
-        respectively, the number <code>28</code> and the string <code>"Class"</code>, since this person looks old enough
-        and has the properly license, the decision node returns the boolean <code>true</code>.
-      </p>
-      <img src="/assets/data-types-2.png" />
-      <blockquote cite="https://www.omg.org/spec/DMN/1.2/PDF">
-        <p>
-          <i class="fa fa-graduation-cap"></i>
-          The <a href="https://www.omg.org/spec/DMN/About-DMN/">DMN Specification</a> often refers to data types as
-          Item Definitions, both names means strictly the same thing.
-        </p>
-      </blockquote>
-      <a class="button next-section" href="/learn/simple-data-types">Try Data Types now →</a>
-    </div>
-  </div>
-</div>
+You'll frequently handle data when you build a DMN model, and when you think about data, you need to think about types.
+
+Sometimes you will face very simple situations, like this:
+
+![](/assets/data-types-1.png)
+
+On this example, the decision node, possibly a decision table, checks the input nodes **Age** and **Driver license type**. In this example the _values_ for these input nodes are, respectively, the number `28` and the string `"Class A"`, since this person looks old enough and has the properly license, the decision node returns the boolean `true`.
+
+![](/assets/data-types-2.png)
+
+> <i class="fa fa-graduation-cap"></i> The [DMN Specification](https://www.omg.org/spec/DMN/About-DMN) often refers to data types as Item Definitions, both names means strictly the same thing.
+
+<a class="button next-section" href="/learn/simple-data-types">Try Data Types now →</a>
