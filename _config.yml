@@ -7,3 +7,4 @@ baseurl: ''
 url: 'http://learn-dmn-in-15-minutes.com'
 google_analytics: 'UA-160845171-1'
 markdown: kramdown
+version: 2.0.0

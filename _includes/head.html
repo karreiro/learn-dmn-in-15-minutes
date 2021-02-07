@@ -3,7 +3,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ site.author }}">
-
   <title>
     {{ site.title | escape }}
     {% if page.title %}
@@ -11,6 +10,7 @@
     {{ page.title | escape }}
     {% endif %}
   </title>
+  {% assign version = site.version | remove: '.' %}
   <meta name="description"
     content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <link rel="icon" href="/assets/favicon.png">
@@ -18,9 +18,9 @@
     href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto:400,700|Inconsolata:500|Open+Sans&display=block"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/normalize.css">
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/normalize.css?{{ version }}">
+  <link rel="stylesheet" href="/assets/main.css?{{ version }}">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css?{{ version }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   {% if jekyll.environment == 'production' and site.google_analytics %}
