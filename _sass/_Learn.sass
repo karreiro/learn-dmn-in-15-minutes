@@ -442,4 +442,22 @@
               transition: .4s
               border-radius: 50%
 
-  // ––––––––––––––––––––––––––––––––––––––––––––––––––
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+#section-the-feel-language
+  table
+    margin-bottom: 5rem
+    font-size: 1.75rem
+    tbody
+      border-radius: 0.4rem
+      margin: 0 0.2rem
+      white-space: nowrap
+      font-family: $monospace
+      td + td
+        font-style: italic
+        color: #999
+        &::before
+          content: "→"
+          padding: 0 0.6rem
+          color: #999
+          display: inline-block
