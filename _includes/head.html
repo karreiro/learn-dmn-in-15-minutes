@@ -18,9 +18,10 @@
     href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto:400,700|Inconsolata:500|Open+Sans&display=block"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/normalize.css?{{ version }}">
-  <link rel="stylesheet" href="/assets/main.css?{{ version }}">
-  <link rel="stylesheet" href="/assets/font-awesome.min.css?{{ version }}">
+  {% assign latest_build_time = 'now' | date: "%Y%m%dT%H%M%S" %}
+  <link rel="stylesheet" href="/assets/normalize.css?v={{ latest_build_time }}">
+  <link rel="stylesheet" href="/assets/main.css?v={{ latest_build_time }}">
+  <link rel="stylesheet" href="/assets/font-awesome.min.css?v={{ latest_build_time }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   {% if jekyll.environment == 'production' and site.google_analytics %}
