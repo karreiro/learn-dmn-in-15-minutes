@@ -24,7 +24,7 @@ You also could define different behaviors:
 | -------------------------------------------- | ------------ |
 | if 20 > 0 then "YES" else "NO"               | "YES"        |
 | if (20 - (10 \* 2)) > 0 then "YES" else "NO" | "NO"         |
-| if (2 \*\* 3) = 16 then "YES" else "NO"      | "YES"        |
+| if (2 \*\* 3) = 8 then "YES" else "NO"       | "YES"        |
 | if (4 / 2) != 2 then "YES" else "NO"         | "NO"         |
 
 ### Loop statements
