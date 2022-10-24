@@ -17,7 +17,7 @@ cd dmn-quarkus-example
 mvn clean compile quarkus:dev -DskipTests=true
 ```
 
-OK! Open the [localhost:8080/swagger-ui](http://localhost:8080/swagger-ui) to check the Swagger UI:
+OK! Open the [http://localhost:8080/q/swagger-ui/](http://localhost:8080/q/swagger-ui/) to check the Swagger UI:
 
 ![Execution Swagger UI](/assets/execution-swagger-ui.png)
 
